@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OBELIK — 90-Day Content War Plan</title>
+  <meta name="description" content="The OBELIK 90-Day Content Calendar. Build in public strategy for transforming construction across Africa.">
+  <meta property="og:title" content="OBELIK — 90-Day Content War Plan">
+  <meta property="og:description" content="90 days of strategic content to build noise, attract fintech partners, and convert attention into partnerships.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23E8432A'/><text x='16' y='22' font-size='14' font-family='monospace' font-weight='bold' fill='white' text-anchor='middle'>OB</text></svg>">
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; background: #08080A; min-height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useMemo } = React;
+
+
+/* ───────────────────────── PHASE & DATA DEFINITIONS ───────────────────────── */
+
+const PHASES = [
+  { id: 1, name: "PHASE 1 — Ignite", subtitle: "Build Noise, Establish Voice, Attract Eyes", weeks: "Weeks 1–4", color: "#E8432A" },
+  { id: 2, name: "PHASE 2 — Magnetize", subtitle: "Demo Traction, Fintech Pull, Community Growth", weeks: "Weeks 5–8", color: "#D97706" },
+  { id: 3, name: "PHASE 3 — Convert", subtitle: "Demo Launch, Partnerships, Investor Signal", weeks: "Weeks 9–13", color: "#059669" },
+];
+
+const PILLAR_COLORS = {
+  problem: "#E8432A",
+  build: "#1D9BF0",
+  vision: "#7C3AED",
+  community: "#059669",
+  fintech: "#D97706",
+};
+
+const PILLAR_ICONS = {
+  problem: "🔥",
+  build: "🛠️",
+  vision: "🌍",
+  community: "🤝",
+  fintech: "💰",
+};
+
+const PILLAR_NAMES = {
+  problem: "Problem Awareness",
+  build: "Build in Public",
+  vision: "Vision / Thought Leadership",
+  community: "Community & Engagement",
+  fintech: "Fintech Magnet",
+};
+
+const PLATFORM_TAGS = {
+  x: { label: "X", color: "#1D9BF0" },
+  linkedin: { label: "LinkedIn", color: "#0A66C2" },
+  reels: { label: "TikTok/IG", color: "#E8432A" },
+  live: { label: "LIVE", color: "#7C3AED" },
+};
+
+// Helper to generate date strings starting from a Monday
+const getDate = (dayIndex) => {
+  const start = new Date(2025, 3, 14); // April 14, 2025 (Monday)
+  const d = new Date(start);
+  d.setDate(d.getDate() + dayIndex);
+  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+};
+
+const getDayName = (dayIndex) => {
+  const names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  return names[dayIndex % 7];
+};
+
+/* ───────────────────────── 90 DAYS OF CONTENT ───────────────────────── */
+
+const generateDays = () => {
+  const days = [];
+
+  // ═══════════════════════ PHASE 1: IGNITE (Days 1-30) ═══════════════════════
+
+  // WEEK 1
+  days.push({
+    day: 1, phase: 1, pillar: "problem", dayName: "Mon",
+    title: "The $232B Wake-Up Call",
+    posts: [
+      { platform: "x", type: "Thread (6 tweets)", content: `Tweet 1:\n"Africa's construction sector is worth $232 BILLION.\n\nBut most projects still run on WhatsApp groups, Excel sheets, and handshake deals.\n\nHere's why that's a crisis — and what I'm building to fix it. 🧵"\n\nTweet 2:\n"Procurement? Manual and opaque.\nPayments? Unverified.\nSite monitoring? A guy sends photos to a group chat.\nAccountability? Optional.\n\nThis isn't an exaggeration. This is the standard."\n\nTweet 3:\n"The result?\n\n→ Projects delivered 2-5x over budget\n→ Contractors paid before milestones are hit\n→ Materials vanish between purchase and delivery\n→ Investors can't verify where their money went"\n\nTweet 4:\n"This isn't a talent problem. Africa has world-class engineers.\n\nIt's a systems problem. A governance problem.\n\nAnd you don't fix governance with another spreadsheet."\n\nTweet 5:\n"So I'm building OBELIK.\n\nA 360° platform that digitises the entire construction lifecycle:\n\nProcurement → Contractor Eval → Site Monitoring → Milestone Payments → Supply Chain\n\nOne platform. Full transparency. Every dollar tracked."\n\nTweet 6:\n"We're pre-launch. Building the demo right now.\n\nI'm going to build this in public — every win, every setback, every decision.\n\nFollow along. RT if this problem needs solving.\n\n#BuildInPublic #OBELIK #ConstructionTech"` },
+      { platform: "linkedin", type: "Founder introduction post", content: `"I spent 2 years studying why infrastructure projects fail in Africa.\n\nIt's not funding — billions flow in every year.\nIt's not talent — we have world-class engineers.\n\nIt's the system. Or rather, the absence of one.\n\nMost construction projects across Africa operate without unified digital procurement records, milestone-verified payments, real-time site monitoring, or supply chain traceability.\n\nThe result? Cost overruns. Delays. Disputes. And a trust deficit that scares away investment.\n\nThat's why I'm building OBELIK — the operating system for construction governance in Africa.\n\nWe're in the demo phase. I'm sharing the entire journey publicly.\n\nIf you work in construction, infrastructure, fintech, or govtech — let's connect.\n\n#BuildInPublic #ConstructionTech #OBELIK #AfricanTech"` },
+    ]
+  });
+
+  days.push({
+    day: 2, phase: 1, pillar: "build", dayName: "Tue",
+    title: "Day 1 of Building in Public",
+    posts: [
+      { platform: "x", type: "Screenshot tweet", content: `"Day 1 of building OBELIK in public.\n\nToday: mapped out the platform architecture.\n\n6 core modules:\n→ Project Creation\n→ Procurement & Bidding\n→ Contractor Evaluation\n→ Site Monitoring\n→ Supply Chain\n→ Milestone Payments\n\n[Screenshot of architecture diagram]\n\nThis is the skeleton. Now we build the body.\n\n#BuildInPublic #OBELIK"` },
+      { platform: "reels", type: "60-sec founder intro", content: `HOOK (first 2 sec): "I'm building the most important software in African construction."\n\nSCRIPT:\n"My name is [Name], and I'm building OBELIK — a platform to digitise how construction projects are managed across Africa.\n\n[Quick cuts of construction sites, then screen]\n\nRight now, a $50 million road project can be managed on WhatsApp. Payments move without verification. Contractors get hired based on who they know, not what they've done.\n\nOBELIK changes that. Every bid recorded. Every milestone verified. Every dollar tracked.\n\nI'm building this live. Follow the journey.\n\nDay 1 starts now."\n\nCAPTION: Day 1 of building the OS for African construction 🏗️ #BuildInPublic #OBELIK #AfricanTech #Founder #ConstructionTech` },
+    ]
+  });
+
+  days.push({
+    day: 3, phase: 1, pillar: "vision", dayName: "Wed",
+    title: "The Procore Comparison",
+    posts: [
+      { platform: "x", type: "Hot take thread", content: `"Procore built a $12B company digitising construction in the US.\n\nAfrica's construction market is larger. Growing faster. Less digitised.\n\nAnd there is no Procore.\n\nYet.\n\nHere's why OBELIK is different from just 'copying Procore for Africa' 🧵"\n\n"Procore focuses on project management for developed markets with existing governance.\n\nAfrica's problem isn't just project management — it's the absence of governance infrastructure itself.\n\nOBELIK isn't a tool. It's the governance layer."\n\n"We embed:\n→ Transparent procurement with audit trails\n→ Meritocratic contractor evaluation\n→ Escrow-based milestone payments\n→ Supply chain traceability\n\nThis isn't a nice-to-have feature set. It's the trust infrastructure the market is missing."\n\n"If you invested in Procore at seed, you saw a $12B outcome.\n\nThe African construction market is $232B and growing.\n\nThe opportunity is here. We're building it now.\n\n@ycombinator — this is the kind of market you were built for."` },
+      { platform: "linkedin", type: "Thought leadership", content: `"Why 'Procore for Africa' is the wrong framing — and what OBELIK actually is.\n\nProcore solved project management for markets that already had governance.\n\nAfrica's construction sector doesn't just need better tools. It needs the governance layer itself.\n\nThat's what OBELIK is building: the operating system that makes procurement transparent, payments verifiable, and accountability structural — not optional.\n\nWe're not copying a Western model. We're building for African market conditions from the ground up.\n\nMore on this journey as we build. #OBELIK #BuildInPublic #ConstructionTech"` },
+    ]
+  });
+
+  days.push({
+    day: 4, phase: 1, pillar: "problem", dayName: "Thu",
+    title: "The Procurement Scandal",
+    posts: [
+      { platform: "x", type: "Story thread", content: `"A road project in West Africa. Budgeted at $12M.\n\nDelivered at $31M. Three years late.\n\nHere's what went wrong — and how a system like OBELIK would have caught it at every stage. 🧵"\n\n"Stage 1: Procurement.\nThe tender process had no digital record. Bid evaluations weren't standardised. The winning contractor had no verified track record.\n\nOn OBELIK: Bids are time-stamped, encrypted, and evaluated against pre-set criteria. Every decision has an audit trail."\n\n"Stage 2: Payments.\nThe contractor received 60% of funds before completing 25% of the work. No milestone verification. No escrow.\n\nOn OBELIK: Funds are released only when milestones are independently verified. Escrow protects every dollar."\n\n"Stage 3: Monitoring.\nThe project owner relied on quarterly site visits. By the time delays were discovered, 18 months had been lost.\n\nOn OBELIK: Real-time site monitoring with timestamped documentation. Delays are flagged in days, not years."\n\n"This isn't fiction. Variations of this story play out across Africa every month.\n\nThe system isn't broken. There IS no system.\n\nThat's what we're building. Follow the journey → @obelik_tech"` },
+    ]
+  });
+
+  days.push({
+    day: 5, phase: 1, pillar: "community", dayName: "Fri",
+    title: "Industry Poll + Engagement",
+    posts: [
+      { platform: "x", type: "Poll + engagement", content: `"Construction professionals in Africa — I need your help.\n\nWhat's the #1 source of project delays you've personally experienced?\n\n🔴 Procurement issues\n🟡 Payment delays\n🟢 Poor site coordination\n🔵 Supply chain failures\n\nDrop your war stories below. Every answer shapes what we build at OBELIK. 👇"` },
+      { platform: "linkedin", type: "Community question", content: `"Every Friday I'm going to share one honest lesson from building OBELIK.\n\nWeek 1 lesson: Building for Africa means building for trust.\n\nThe construction sector doesn't just need better software. It needs systems people actually trust — because trust has been broken so many times.\n\nEvery feature we design starts with one question: 'Does this make the process more trustworthy?'\n\nIf the answer is no, it doesn't ship.\n\nWhat's the hardest trust problem you've seen in your industry?\n\n#BuildInPublic #OBELIK #FounderJourney"` },
+    ]
+  });
+
+  days.push({
+    day: 6, phase: 1, pillar: "build", dayName: "Sat",
+    title: "Weekend Build Log #1",
+    posts: [
+      { platform: "x", type: "Quick update", content: `"Saturday build session.\n\nWorking on the procurement module wireframes for OBELIK.\n\nThe flow: Project owner posts tender → Contractors submit bids → System timestamps and encrypts → Evaluation against pre-set criteria → Immutable audit trail.\n\nNo backroom deals. Just merit.\n\n[Screenshot]\n\n#BuildInPublic"` },
+    ]
+  });
+
+  days.push({
+    day: 7, phase: 1, pillar: "build", dayName: "Sun",
+    title: "Week 1 Recap",
+    posts: [
+      { platform: "x", type: "Week recap", content: `"Week 1 recap — building OBELIK in public:\n\n✅ Platform architecture mapped\n✅ Procurement module wireframed\n✅ First community poll: 400+ votes\n✅ 12 DMs from construction professionals\n\nWeek 2 preview: Contractor evaluation module + first video walkthrough.\n\nThe OS for African construction is coming. 🧱\n\n#BuildInPublic #OBELIK"` },
+    ]
+  });
+
+  // WEEK 2
+  days.push({
+    day: 8, phase: 1, pillar: "problem", dayName: "Mon",
+    title: "The WhatsApp Project Manager",
+    posts: [
+      { platform: "x", type: "Viral tweet + thread", content: `"If your construction project is managed on WhatsApp, you don't have a project.\n\nYou have a prayer group. 🙏\n\nHere's what happens when WhatsApp is your project management tool: 🧵"\n\n"1. Scope changes happen in voice notes that nobody replays\n2. Approvals are a thumbs-up emoji\n3. The 'audit trail' is a chat that someone accidentally cleared\n4. Budget updates are 'I'll send you the numbers later'\n5. Site photos are mixed in with family photos and memes"\n\n"I'm not making fun. This is genuinely how multi-million dollar projects are managed across Africa.\n\nNot because people are lazy. Because there's no alternative designed for this market.\n\nThat's OBELIK. A real system for real projects.\n\n#OBELIK #ConstructionTech"` },
+      { platform: "reels", type: "60-sec comedic + serious", content: `HOOK: "POV: You're managing a $10M construction project on WhatsApp"\n\n[Show phone screen with fake WhatsApp chat — increasingly chaotic messages, voice notes, random photos, 'thumbs up' approvals, someone sending memes in the project group]\n\n[Cut to face — serious]\n\n"This is funny until you realize this is how billions of dollars in infrastructure actually move across Africa.\n\nNo audit trail. No verification. No accountability.\n\nI'm building OBELIK to replace the prayer group with a real system.\n\nFollow for the build journey."\n\nCAPTION: This is how $232B in construction is managed 💀 #ConstructionTech #BuildInPublic #OBELIK #Africa` },
+    ]
+  });
+
+  days.push({
+    day: 9, phase: 1, pillar: "build", dayName: "Tue",
+    title: "Contractor Evaluation Module",
+    posts: [
+      { platform: "x", type: "Build update with screenshot", content: `"Build update 🔧\n\nDesigning the contractor evaluation framework for OBELIK.\n\nHow it works:\n→ Contractors are scored on technical capability, financial strength, and track record\n→ Scores are data-driven, not relationship-driven\n→ Historical performance on past projects feeds future evaluations\n\nMeritocracy, enforced by software.\n\n[Screenshot of evaluation matrix wireframe]\n\n#BuildInPublic #OBELIK"` },
+      { platform: "linkedin", type: "Deep dive post", content: `"How do you choose a contractor for a $20M project in Africa today?\n\nIn many cases: relationships. Referrals. Political connections.\n\nThe result: underqualified contractors win major projects. Overqualified ones lose out. And everyone suffers when the project fails.\n\nAt OBELIK, we're building a meritocratic contractor evaluation system:\n\n→ Technical capability scoring\n→ Financial strength verification\n→ Historical performance data\n→ Automated onboarding for compliance\n\nSelection based on competence. Not connections.\n\nThis is what we mean by 'governance layer.' The software enforces fairness.\n\n#OBELIK #BuildInPublic #ConstructionTech"` },
+    ]
+  });
+
+  days.push({
+    day: 10, phase: 1, pillar: "fintech", dayName: "Wed",
+    title: "The Construction Escrow Opportunity",
+    posts: [
+      { platform: "x", type: "Fintech-targeted thread", content: `"Hot take: The biggest fintech opportunity in Africa right now isn't payments or lending.\n\nIt's construction escrow.\n\n$232B flows through African construction annually. Most of it moves without milestone verification.\n\nLet me break down the opportunity 🧵"\n\n"Right now, a project owner sends $5M to a contractor. The contractor says 'foundation is done.' The owner has no way to verify remotely.\n\nFunds move on trust alone. And when trust breaks, projects collapse."\n\n"What if a fintech could embed escrow directly into the project management layer?\n\n→ Funds held in escrow\n→ Milestones verified on platform\n→ Release triggered automatically\n→ Full financial audit trail\n→ 0.5% transaction fee on every disbursement"\n\n"That's exactly what OBELIK's financial layer is designed for.\n\nWe have the governance platform. We need the financial rails.\n\nFintech founders building in payments, escrow, or B2B disbursements in Africa — this is your vertical.\n\nDMs open. Tag someone who needs to see this 👇"` },
+      { platform: "linkedin", type: "Partnership-focused post", content: `"To every fintech founder and BD lead in my network:\n\nThere's a $232B sector in Africa where payments still move without verification. Construction.\n\nAt OBELIK, we're building the governance infrastructure for the full construction lifecycle — including a milestone-based escrow payment layer.\n\nBut we're a construction governance platform, not a bank. We need a fintech partner to power the financial rails.\n\nThe opportunity:\n→ Embed escrow into every project on the platform\n→ 0.5% fee on all milestone disbursements\n→ Access to governments, developers, and international orgs\n→ First-mover advantage in construction fintech across Africa\n\nWe're building the demo now. The partnership conversation starts today.\n\nIf this is you — or someone in your network — DM me or comment below.\n\n#Fintech #ConstructionTech #Partnership #OBELIK"` },
+    ]
+  });
+
+  days.push({
+    day: 11, phase: 1, pillar: "vision", dayName: "Thu",
+    title: "The 10-Year Prediction",
+    posts: [
+      { platform: "x", type: "Vision thread", content: `"In 10 years, no serious infrastructure project in Africa will launch without a digital governance layer.\n\nProcurement will be auditable by default.\nPayments will be milestone-verified.\nSite progress will be real-time.\nSupply chains will be fully traceable.\n\nThis isn't a prediction. It's an inevitability.\n\nThe question is: who builds the operating system?\n\nWe think it's OBELIK. And we're not waiting for permission.\n\nFollow the build → @obelik_tech"` },
+      { platform: "reels", type: "Talking head — founder vision", content: `HOOK: "Africa will spend $240 billion on construction by 2030..."\n\n"Roads. Hospitals. Housing. Power plants.\n\nBut here's the thing — most of these projects will be managed on spreadsheets. Payments will move without verification. And billions will be lost to inefficiency.\n\nI'm building OBELIK to change that.\n\nOne platform. Every stage of a construction project — from procurement to payment — digitised, transparent, and auditable.\n\nCurrently building the demo. No funding yet. No launch yet. Just a founder, a vision, and a laptop.\n\nThis is what building in public looks like in Africa.\n\nFollow the journey."\n\nCAPTION: $240B market. Zero digital governance. We're fixing that. 🏗️🌍 #OBELIK #BuildInPublic #AfricanFounder` },
+    ]
+  });
+
+  days.push({
+    day: 12, phase: 1, pillar: "community", dayName: "Fri",
+    title: "Founder Shoutout Friday",
+    posts: [
+      { platform: "x", type: "Engagement tweet", content: `"Founders building for Africa — drop your startup below.\n\nI'll RT and engage with 10 of you.\n\nWe're all building in the same ecosystem. Let's amplify each other. 🌍\n\n#BuildInPublic #AfricanTech"` },
+      { platform: "linkedin", type: "Honest founder lesson", content: `"Friday lesson from building OBELIK — Week 2.\n\nThis week I learned that the hardest part of building a platform isn't the code. It's the sequencing.\n\nOBELIK covers procurement, contractor eval, site monitoring, supply chain, and payments. We can't build everything at once.\n\nSo we had to ask: what module creates the most trust fastest?\n\nAnswer: procurement. Because if people don't trust how a project starts, they won't trust anything after.\n\nSo that's where we're starting. Procurement transparency first. Everything else builds on that.\n\nWhat's the hardest sequencing decision you've made as a builder?\n\n#BuildInPublic #OBELIK #FounderJourney"` },
+    ]
+  });
+
+  days.push({
+    day: 13, phase: 1, pillar: "build", dayName: "Sat",
+    title: "🔴 LIVE SESSION #1",
+    posts: [
+      { platform: "live", type: "X Space / IG Live (60 min)", content: `FIRST LIVE SESSION: "Why African Construction Needs an Operating System"\n\nFORMAT:\n• 0-10 min: Who I am, what OBELIK is, why I'm building in public\n• 10-25 min: Deep dive — the 5 broken layers of African construction (procurement, execution, monitoring, payments, supply chain)\n• 25-45 min: Live demo walkthrough of wireframes built so far\n• 45-55 min: Open Q&A\n• 55-60 min: "Who should I talk to?" — ask for intros to construction pros, fintech people, investors\n\nPROMOTION TWEET (post Thursday):\n"🔴 GOING LIVE this Saturday\n\nTopic: Why the $232B African construction market has no operating system — and how we're building one.\n\nI'll walk through our wireframes and take every question.\n\nSet your reminder 👇\n\n#OBELIK #BuildInPublic"` },
+    ]
+  });
+
+  days.push({
+    day: 14, phase: 1, pillar: "build", dayName: "Sun",
+    title: "Week 2 Recap + Preview",
+    posts: [
+      { platform: "x", type: "Week recap", content: `"Week 2 building OBELIK:\n\n✅ Contractor evaluation module designed\n✅ First fintech partnership thread — 15K impressions\n✅ First live session — [X] attendees, incredible questions\n✅ 3 DMs from fintech founders\n\nWeek 3: Site monitoring module + first video demo.\n\nThe momentum is building. 🧱\n\n#BuildInPublic #OBELIK"` },
+    ]
+  });
+
+  // WEEK 3
+  days.push({
+    day: 15, phase: 1, pillar: "problem", dayName: "Mon",
+    title: "The Diaspora Investor Problem",
+    posts: [
+      { platform: "x", type: "Thread targeting diaspora", content: `"If you're in the diaspora and you've ever invested in a construction project back home...\n\nYou know the pain. 🧵"\n\n"You send $100K for a building project. The contractor sends photos every few months. You ask for updates and get vague answers.\n\n6 months later, the project is 'almost done.' 18 months later, it's still 'almost done.'\n\nSound familiar?"\n\n"The core problem: you can't monitor what you can't see. And right now, there's no system for remote project verification in African construction.\n\nNo real-time updates. No milestone verification. No financial transparency."\n\n"OBELIK solves this with:\n→ Real-time site monitoring with timestamped documentation\n→ Milestone-based escrow payments\n→ Full audit trails accessible from anywhere\n\nYour money. Your project. Your visibility.\n\nBuilding this for every diaspora investor who's been burned. 🧱\n\n#OBELIK #DiasporaInvestors #BuildInPublic"` },
+      { platform: "linkedin", type: "Diaspora-targeted post", content: `"To every diaspora professional who's invested in a construction project back home and regretted it:\n\nYou're not alone. And it's not your fault.\n\nThe problem isn't bad contractors (though some are). The problem is the absence of a system that gives you visibility and control from wherever you are.\n\nThat's one of the core use cases OBELIK is built for — real-time, verifiable project monitoring accessible from anywhere in the world.\n\nWe're building the demo now. If this resonates, I'd love to hear your story.\n\n#OBELIK #DiasporaInvestors #ConstructionTech"` },
+    ]
+  });
+
+  days.push({
+    day: 16, phase: 1, pillar: "build", dayName: "Tue",
+    title: "Site Monitoring Module",
+    posts: [
+      { platform: "x", type: "Build update", content: `"Build update 🔧\n\nDesigning the site monitoring module for OBELIK.\n\nKey feature: Structured progress reports.\n\nNo more random photos in group chats. Instead:\n→ Timestamped photo uploads tied to specific milestones\n→ GPS-verified location data\n→ Progress % linked to payment triggers\n→ Variance alerts when timelines slip\n\n[Screenshot]\n\nRemote oversight, done right.\n\n#BuildInPublic #OBELIK"` },
+      { platform: "reels", type: "Screen recording + face cam", content: `HOOK: "What if you could monitor any construction project from your phone?"\n\n[Show wireframe/mockup of monitoring dashboard]\n\n"This is the site monitoring module I'm building for OBELIK.\n\nEvery update is timestamped. Every photo is GPS-verified. Progress is linked directly to payment milestones.\n\nNo more 'trust me, the work is done.' The system verifies.\n\nThis is what construction governance looks like.\n\nFollow for daily updates."\n\nCAPTION: Building remote construction monitoring for Africa 📱🏗️ #OBELIK #BuildInPublic #ConstructionTech` },
+    ]
+  });
+
+  days.push({
+    day: 17, phase: 1, pillar: "fintech", dayName: "Wed",
+    title: "Paystack Comparison Play",
+    posts: [
+      { platform: "x", type: "Strategic comparison", content: `"Paystack embedded payments in e-commerce.\nFlutterwave embedded them in cross-border trade.\nMoniepoint embedded them in retail banking.\n\nWho embeds them in construction?\n\n$232B market. <5% digitised. Zero embedded financial infrastructure.\n\nThat's the OBELIK partner opportunity.\n\nFintech founders: this vertical is wide open. Let's build the rails together.\n\nDMs open. 👇"` },
+      { platform: "linkedin", type: "Fintech opportunity breakdown", content: `"The fintech playbook in Africa has been: find an underserved sector, embed payments, scale.\n\nE-commerce → Paystack\nCross-border → Flutterwave\nRetail → Moniepoint\n\nConstruction → ???\n\nThe construction sector moves $232B annually across Africa. Payments are manual, unverified, and disconnected from project milestones.\n\nOBELIK is building the governance layer. We need a fintech partner for the financial layer.\n\nFirst mover gets exclusive access to the largest untapped B2B payment vertical on the continent.\n\nLet's talk. #Fintech #OBELIK #Partnership"` },
+    ]
+  });
+
+  days.push({
+    day: 18, phase: 1, pillar: "vision", dayName: "Thu",
+    title: "Government Use Case",
+    posts: [
+      { platform: "x", type: "Govtech thread", content: `"Every year, African governments spend billions on infrastructure.\n\nRoads, bridges, hospitals, schools, housing.\n\nAnd every year, a significant portion is lost to inefficiency, delays, and lack of oversight.\n\nHere's how OBELIK changes that for government projects 🧵"\n\n"Problem: Government procurement is opaque. Citizens can't verify how contracts were awarded.\n\nOBELIK: Every tender is digitally recorded, time-stamped, and evaluated transparently. Full audit trail accessible to oversight bodies."\n\n"Problem: Project payments aren't tied to verified progress.\n\nOBELIK: Milestone-based escrow. Funds release only when independent verification confirms work completion. Every disbursement is auditable."\n\n"Problem: No real-time visibility into project status.\n\nOBELIK: Live dashboards showing progress, timelines, budget utilisation, and variance reports.\n\nImagine citizens being able to track their local hospital construction in real-time."\n\n"This isn't anti-government. This is pro-governance.\n\nThe best governments want accountability. OBELIK gives them the tool to prove it.\n\n#OBELIK #GovTech #Infrastructure"` },
+    ]
+  });
+
+  days.push({
+    day: 19, phase: 1, pillar: "community", dayName: "Fri",
+    title: "AMA Announcement + Honest Lesson",
+    posts: [
+      { platform: "x", type: "Engagement + AMA promo", content: `"Question time 👇\n\nIf you could fix ONE thing about how construction projects are managed in your country, what would it be?\n\nBest answer gets a shoutout on Saturday's live session.\n\n#OBELIK #ConstructionTech"` },
+      { platform: "linkedin", type: "Founder lesson", content: `"Week 3 lesson from building OBELIK:\n\nThe market told me something I didn't expect — diaspora investors are MORE frustrated than local stakeholders.\n\nThey invest from abroad, can't verify progress, and feel helpless when projects stall.\n\nThis week we redesigned the monitoring module with them in mind: real-time dashboards accessible from any device, anywhere in the world.\n\nSometimes the biggest user insight comes from the user you didn't initially design for.\n\n#BuildInPublic #OBELIK #ProductDevelopment"` },
+    ]
+  });
+
+  days.push({
+    day: 20, phase: 1, pillar: "build", dayName: "Sat",
+    title: "Weekend Deep Build",
+    posts: [
+      { platform: "x", type: "Build in public — technical", content: `"Saturday deep build 🔧\n\nConnecting the procurement module to the contractor evaluation engine.\n\nWhen a bid comes in on OBELIK, the system automatically:\n→ Pulls the contractor's capability score\n→ Checks financial verification status\n→ Surfaces historical project performance\n→ Flags any compliance gaps\n\nEvaluation starts before a human even opens the bid.\n\n[Screenshot]\n\n#BuildInPublic #OBELIK"` },
+    ]
+  });
+
+  days.push({
+    day: 21, phase: 1, pillar: "problem", dayName: "Sun",
+    title: "Week 3 Recap + Data Drop",
+    posts: [
+      { platform: "x", type: "Stats + recap", content: `"3 weeks building OBELIK. Here's where we are:\n\n📊 Platform stats:\n→ 3 core modules wireframed\n→ 1 live session completed\n→ 50+ construction pros engaged\n→ Multiple fintech inbounds\n\n📊 Content stats:\n→ [X] followers gained\n→ [X] total impressions\n→ Most viral thread: [topic]\n\nWeek 4: Supply chain module + second live session.\n\nThe train is moving. 🧱 #BuildInPublic"` },
+    ]
+  });
+
+  // WEEK 4
+  days.push({
+    day: 22, phase: 1, pillar: "problem", dayName: "Mon",
+    title: "Supply Chain Black Hole",
+    posts: [
+      { platform: "x", type: "Problem thread", content: `"Construction supply chains in Africa have a black hole problem.\n\nMaterials are ordered. Payments are made. And then... things disappear. 🧵"\n\n"Cement ordered for a housing project arrives 40% short. The supplier says they delivered in full. The site manager says otherwise. No digital record exists.\n\nWho's telling the truth? Nobody knows. Because there's no system."\n\n"OBELIK's supply chain module tracks:\n→ Purchase orders (digitally recorded)\n→ Delivery confirmations (GPS + timestamp)\n→ Quantity verification (on-site confirmation)\n→ Variance alerts (automatic flagging)\n\nEvery bag of cement. Every steel beam. Tracked.\n\n#OBELIK #SupplyChain #ConstructionTech"` },
+      { platform: "linkedin", type: "Supply chain deep dive", content: `"The hidden cost leak in African construction? The supply chain.\n\nWithout structured tracking, materials vanish between purchase and delivery. Quantities don't match. Timelines slip. And nobody can prove what happened.\n\nWe're designing OBELIK's supply chain module to bring end-to-end visibility: digital purchase orders, GPS-verified deliveries, on-site quantity confirmation, and automatic variance alerts.\n\nTransparency from order to site. That's the standard we're building toward.\n\n#OBELIK #ConstructionTech #SupplyChain"` },
+    ]
+  });
+
+  days.push({
+    day: 23, phase: 1, pillar: "build", dayName: "Tue",
+    title: "Supply Chain Module Build",
+    posts: [
+      { platform: "x", type: "Build update", content: `"Build update 🔧\n\nSupply chain module — mapping the data flow.\n\nPurchase Order → Supplier Confirmation → Dispatch Record → Delivery Verification → Site Receipt\n\nEvery step creates an immutable record. Every discrepancy triggers an alert.\n\nNo more 'the cement never arrived' vs 'we delivered everything.'\n\nThe system knows.\n\n[Flow diagram screenshot]\n\n#BuildInPublic #OBELIK"` },
+      { platform: "reels", type: "60-sec explainer", content: `HOOK: "Where does the cement go?"\n\n"Seriously. On construction sites across Africa, materials disappear between purchase and delivery and nobody can prove what happened.\n\n[Show wireframe of tracking flow]\n\nThis is OBELIK's supply chain module. Every order is recorded. Every delivery is GPS-verified. Every discrepancy is flagged automatically.\n\nNo more he-said-she-said. The system is the witness.\n\nFollow the build."\n\nCAPTION: Tracking every bag of cement 📦 #OBELIK #BuildInPublic #ConstructionTech` },
+    ]
+  });
+
+  days.push({
+    day: 24, phase: 1, pillar: "fintech", dayName: "Wed",
+    title: "The Trust Gap — Fintech Angle",
+    posts: [
+      { platform: "x", type: "Fintech thread", content: `"Here's a number that should make every fintech founder in Africa pay attention:\n\n0.\n\nThat's the number of dedicated construction escrow platforms operating at scale across the continent.\n\n$232B market. Zero embedded financial governance.\n\nLet me explain why this matters 🧵"\n\n"Construction payments in Africa are essentially trust transfers. Money moves based on relationships, not verified milestones.\n\nFintech solved trust in e-commerce (escrow, buyer protection). In lending (credit scoring, verification). In remittances (compliance, tracking).\n\nBut in construction? Nothing."\n\n"OBELIK provides the verification layer — the project governance that proves work was done.\n\nWhat we need is a fintech partner who provides the financial rails — escrow accounts, disbursement automation, compliance.\n\nTogether: the first construction payment infrastructure in Africa.\n\n#OBELIK #Fintech"` },
+    ]
+  });
+
+  days.push({
+    day: 25, phase: 1, pillar: "community", dayName: "Thu",
+    title: "Industry Spotlight",
+    posts: [
+      { platform: "x", type: "Engagement + education", content: `"3 people you should follow if you care about construction tech in Africa:\n\n1. [Tag industry expert]\n2. [Tag construction professional]\n3. [Tag fellow founder]\n\nAnd if you're building in this space, drop your handle below. Let's build this ecosystem.\n\n#ConstructionTech #AfricanTech"` },
+      { platform: "linkedin", type: "Industry network post", content: `"Building a platform is one thing. Building a community is another.\n\nOne month into building OBELIK, and the most valuable thing isn't the code — it's the conversations.\n\nContractors telling me about payment delays. Project owners frustrated by lack of oversight. Diaspora investors who've lost money they can't recover.\n\nEvery conversation sharpens the product. Every story validates the mission.\n\nIf you work in African construction or infrastructure — I want to hear your story. DM me or comment below.\n\n#OBELIK #BuildInPublic #Community"` },
+    ]
+  });
+
+  days.push({
+    day: 26, phase: 1, pillar: "vision", dayName: "Fri",
+    title: "End of Month 1 Manifesto",
+    posts: [
+      { platform: "x", type: "Manifesto thread", content: `"One month ago, OBELIK was an idea and a concept note.\n\nToday, it's 5 modules wireframed, a growing community, and fintech founders in our DMs.\n\nHere's what I've learned in 30 days of building in public 🧵"\n\n"Lesson 1: The market is HUNGRY for this. Every thread about construction problems goes viral because people live this pain daily."\n\n"Lesson 2: Fintech is the force multiplier. The moment we started talking about escrow-based payments, a completely different audience showed up."\n\n"Lesson 3: Building in public is the best sales strategy. People invest in what they watch being built. They trust what they can see."\n\n"Month 2 starts Monday. The demo gets real.\n\nFollow @obelik_tech for the next 60 days.\n\n#BuildInPublic #OBELIK"` },
+      { platform: "linkedin", type: "Month 1 reflection", content: `"30 days of building OBELIK in public. Here's my honest report card.\n\nWhat worked: Transparency. Showing wireframes, design decisions, and even mistakes. The construction community responded because they could see themselves in the product.\n\nWhat surprised me: The fintech interest. Our escrow payment layer attracted more inbound interest than any other feature. The market is telling us something.\n\nWhat's next: Month 2 is about turning wireframes into a working demo. The build gets harder. The stakes get higher.\n\nBut the mission hasn't changed: build the operating system for construction governance in Africa.\n\n30 down. The real work starts now.\n\n#OBELIK #BuildInPublic #FounderJourney"` },
+    ]
+  });
+
+  days.push({
+    day: 27, phase: 1, pillar: "community", dayName: "Sat",
+    title: "🔴 LIVE SESSION #2",
+    posts: [
+      { platform: "live", type: "X Space / IG Live (60 min)", content: `LIVE SESSION #2: "Month 1 Recap + The Fintech Opportunity"\n\nFORMAT:\n• 0-10 min: Month 1 journey — what we built, what broke, key learnings\n• 10-25 min: Deep dive — the construction escrow opportunity for fintech companies\n• 25-40 min: Live walkthrough of all 5 module wireframes\n• 40-55 min: Open Q&A + fintech panel (invite 1-2 fintech founders)\n• 55-60 min: Month 2 preview + call for beta testers\n\nPROMOTION:\n"🔴 Live session #2 this Saturday!\n\nTopic: The fintech opportunity in African construction + full wireframe walkthrough.\n\nBringing a fintech founder on to discuss the escrow play.\n\nSet your reminder. Tag a fintech builder. 👇"` },
+    ]
+  });
+
+  days.push({
+    day: 28, phase: 1, pillar: "build", dayName: "Sun",
+    title: "Month 1 Data Dump",
+    posts: [
+      { platform: "x", type: "Month 1 by the numbers", content: `"OBELIK — Month 1 by the numbers:\n\n🧵 [X] threads posted\n👀 [X] total impressions\n👥 [X] new followers\n💬 [X] DMs from industry professionals\n🤝 [X] fintech founder conversations\n🔴 2 live sessions hosted\n🛠️ 5 modules wireframed\n\nMonth 2 goal: working demo.\n\nThe OS for African construction is being built in the open.\n\n#BuildInPublic #OBELIK"` },
+    ]
+  });
+
+  // ═══════════════════════ PHASE 2: MAGNETIZE (Days 29-60) ═══════════════════════
+
+  // WEEK 5
+  days.push({
+    day: 29, phase: 2, pillar: "build", dayName: "Mon",
+    title: "Demo Development Begins",
+    posts: [
+      { platform: "x", type: "Milestone announcement", content: `"Phase 2 starts today.\n\nMonth 1 was wireframes and validation.\nMonth 2 is code and demo.\n\nStarting with the procurement module — the foundation of OBELIK.\n\nEvery day this month, I'll share what I shipped.\n\nHold me accountable. 🧵\n\n[Screenshot of development environment]\n\n#BuildInPublic #OBELIK"` },
+      { platform: "linkedin", type: "Phase 2 announcement", content: `"Today marks the beginning of Phase 2 for OBELIK.\n\nMonth 1 was about validation — wireframes, community building, and understanding the market.\n\nThe response confirmed what we suspected: the African construction sector is desperate for governance infrastructure.\n\nMonth 2 is about building. We're turning wireframes into a working demo, starting with procurement.\n\nThe goal by end of month 2: a demo compelling enough to show fintech partners, government stakeholders, and investors.\n\nFollow the build. The real work starts now.\n\n#OBELIK #BuildInPublic #ConstructionTech"` },
+      { platform: "reels", type: "60-sec hype video", content: `HOOK: "Month 2. Demo time."\n\n"For 30 days I showed you the wireframes. The architecture. The vision.\n\nNow it gets real.\n\n[Show code editor, fast cuts of typing, screens loading]\n\nThis month I'm turning OBELIK from designs into a working platform.\n\nProcurement module first. Then contractor eval. Then payments.\n\nBy day 60, you'll be able to see the future of African construction.\n\nThis is the build. Follow it."\n\nCAPTION: From wireframes to working software. Month 2 begins. 🔧 #OBELIK #BuildInPublic` },
+    ]
+  });
+
+  // Generate remaining Phase 2 days with varied content
+  const phase2Templates = [
+    { day: 30, pillar: "build", dayName: "Tue", title: "First Lines of Code", posts: [
+      { platform: "x", type: "Code screenshot", content: `"First functional component of OBELIK just compiled.\n\nThe tender submission form — where contractors will submit bids.\n\n→ Encrypted on submission\n→ Timestamped automatically\n→ Locked until evaluation period opens\n\n[Screenshot of working UI]\n\nIt's ugly right now. It won't be for long.\n\n#BuildInPublic #OBELIK"` },
+    ]},
+    { day: 31, pillar: "fintech", dayName: "Wed", title: "Escrow Deep Dive for Fintechs", posts: [
+      { platform: "x", type: "Thread", content: `"Let me paint the picture for fintech founders:\n\nA government awards a $50M road contract through OBELIK.\n\nThe payment schedule: 5 milestones, $10M each.\n\nAt each milestone, OBELIK verifies completion through site monitoring. Only then does the escrow release funds.\n\nThe fintech partner earns 0.5% per disbursement = $250K on one project.\n\nNow multiply by thousands of projects.\n\nThis is the construction fintech vertical. First mover owns it.\n\n#OBELIK #Fintech"` },
+      { platform: "linkedin", type: "Detailed partnership post", content: `"Construction fintech by the numbers:\n\n$232B — annual African construction market\n$1.16B — potential transaction fee revenue at 0.5%\n0 — current platforms offering embedded construction escrow at scale\n\nThe math is clear. The market is open. The governance layer (OBELIK) is being built.\n\nAll that's missing is the financial partner.\n\nIf you're building in payments infrastructure in Africa, this is the conversation to have now — before the market catches up.\n\nDM me. #OBELIK #Fintech #Partnership"` },
+    ]},
+    { day: 32, pillar: "problem", dayName: "Thu", title: "The Cost Overrun Epidemic", posts: [
+      { platform: "x", type: "Data-driven thread", content: `"African infrastructure projects experience cost overruns at nearly double the global average.\n\nNot because African projects are harder. Because African projects have fewer systems.\n\nHere's the breakdown and how OBELIK addresses each failure point 🧵"\n\n"Cost overrun cause #1: Scope creep with no documentation.\nOBELIK: Every scope change is digitally recorded and requires multi-party approval.\n\nCause #2: Unverified progress payments.\nOBELIK: Milestone-based escrow. No verification, no payment.\n\nCause #3: Supply chain losses.\nOBELIK: End-to-end material tracking from order to site."\n\n"The tools to prevent this exist. They just haven't been built for Africa. Until now."` },
+      { platform: "reels", type: "Data visual reel", content: `HOOK: "Why do African projects cost 2x more than planned?"\n\n[Show animated stats/graphics]\n\n"It's not the engineers. It's not the materials. It's the system — or the lack of one.\n\nNo digital procurement records. No verified payments. No supply chain tracking.\n\nOBELIK fixes all three. One platform. Full lifecycle governance.\n\nFollow the build."\n\nCAPTION: The cost overrun crisis has a solution 📊 #OBELIK #ConstructionTech #BuildInPublic` },
+    ]},
+    { day: 33, pillar: "community", dayName: "Fri", title: "Feature Request Friday", posts: [
+      { platform: "x", type: "Engagement", content: `"Feature Request Friday 🔧\n\nIf OBELIK existed right now and you could add ONE feature, what would it be?\n\nBest suggestion gets built into the demo.\n\nDrop your ideas below 👇\n\n#OBELIK #BuildInPublic"` },
+      { platform: "linkedin", type: "Founder lesson", content: `"Week 5 founder lesson:\n\nThe most dangerous thing in early-stage building is falling in love with your own assumptions.\n\nThis week, a construction project manager told me our contractor evaluation scoring was wrong — technical capability matters less than cash flow reliability in African markets.\n\nHe was right. We redesigned it.\n\nBuild for the user, not for your thesis.\n\n#OBELIK #BuildInPublic #FounderJourney"` },
+    ]},
+    { day: 34, pillar: "build", dayName: "Sat", title: "Weekend Build Sprint", posts: [
+      { platform: "x", type: "Build update", content: `"Weekend sprint 🔧\n\nThe bid evaluation engine is taking shape.\n\nWhen bids close on OBELIK:\n1. System auto-scores each bid against pre-set criteria\n2. Evaluators see scores, not contractor names (blind eval)\n3. Final selection generates a full audit report\n\nTransparent. Meritocratic. Automatic.\n\n[Screenshot]\n\n#BuildInPublic #OBELIK"` },
+    ]},
+    { day: 35, pillar: "vision", dayName: "Sun", title: "Week 5 Recap", posts: [
+      { platform: "x", type: "Recap + vision", content: `"Week 5 of building OBELIK:\n\n✅ Procurement module — tender form functional\n✅ Bid evaluation engine in progress\n✅ Feature request from community integrated\n✅ Fintech conversations deepening\n\nThe demo is taking shape. 5 weeks of consistent building.\n\nMost startups talk. We're showing the work.\n\n#BuildInPublic #OBELIK"` },
+    ]},
+  ];
+
+  phase2Templates.forEach(t => days.push({ ...t, phase: 2 }));
+
+  // WEEKS 6-8 (Days 36-56)
+  const phase2Remaining = [
+    { day: 36, pillar: "problem", dayName: "Mon", title: "The Contractor Trust Crisis", posts: [{ platform: "x", type: "Thread", content: `"Good contractors in Africa are punished by the system.\n\nThey lose bids to cheaper, unqualified competitors. They get paid late. They have no way to prove their track record.\n\nOBELIK's contractor evaluation module changes this 🧵"\n\n"On OBELIK, every contractor builds a verifiable profile:\n→ Projects completed (with performance scores)\n→ Financial verification status\n→ Technical capability assessment\n→ Client ratings and feedback\n\nGood work creates a permanent, portable record."\n\n"For project owners: selection based on data, not connections.\nFor contractors: a fair system that rewards competence.\n\nMeritocracy shouldn't be revolutionary. But in African construction, it is."` }]},
+    { day: 37, pillar: "build", dayName: "Tue", title: "Dashboard Preview", posts: [{ platform: "x", type: "Screenshot reveal", content: `"First look at the OBELIK project dashboard 👀\n\nOne screen showing:\n→ Active tenders and bid status\n→ Contractor scores and rankings\n→ Milestone progress tracker\n→ Budget vs actual spend\n→ Supply chain alerts\n\nEvery stakeholder sees the truth. One source. No confusion.\n\n[Dashboard screenshot]\n\n#BuildInPublic #OBELIK"` }, { platform: "reels", type: "Screen walkthrough", content: `HOOK: "First look at the OBELIK dashboard"\n\n[Slow screen recording walking through dashboard sections]\n\n"This is where construction governance happens. One screen. Every metric. Full transparency.\n\nStill building. Still rough. But the vision is becoming real.\n\nFollow the journey."\n\nCAPTION: The construction control center 🎛️ #OBELIK #BuildInPublic #Demo` }]},
+    { day: 38, pillar: "fintech", dayName: "Wed", title: "Fintech Case Study", posts: [{ platform: "x", type: "Case study thread", content: `"Let me walk you through how OBELIK + a fintech partner would have saved a real project:\n\nProject: 200-unit housing development, $15M budget, West Africa.\n\nWhat happened without OBELIK:\n→ Contractor received 70% of funds by month 8\n→ Only 35% of work completed\n→ No milestone verification existed\n→ Project abandoned at month 14\n→ $10.5M effectively lost\n\nWhat would have happened WITH OBELIK:\n→ 5 payment milestones, $3M each, held in escrow\n→ Release requires verified site inspection\n→ By month 8: only $6M released (2 verified milestones)\n→ Month 8 inspection flags delays → automatic escalation\n→ Remaining $9M protected in escrow\n\nSavings: $4.5M+ and a project that gets completed.\n\nThis is why fintech + OBELIK = inevitable.\n\n#OBELIK #Fintech #ConstructionTech"` }, { platform: "linkedin", type: "Detailed case study", content: `"How milestone-based escrow could save millions in African construction — a real case study.\n\n[Same case study, expanded with more professional framing for LinkedIn audience]\n\nThe construction sector doesn't just need project management software. It needs financial governance infrastructure.\n\nOBELIK + the right fintech partner = the first integrated solution.\n\nThe demo is in development. The partnership opportunity is now.\n\n#OBELIK #Fintech #ConstructionTech"` }]},
+    { day: 39, pillar: "vision", dayName: "Thu", title: "The YC Pitch", posts: [{ platform: "x", type: "YC-targeted thread", content: `"If I had 2 minutes with @ycombinator, here's what I'd say:\n\n'Africa's construction market: $232B. Digital penetration: <5%. No integrated governance platform exists.\n\nOBELIK digitises the full lifecycle — procurement, execution, monitoring, payments, supply chain. All in one platform.\n\nRevenue: enterprise subscriptions + 0.5% escrow transaction fee.\n\nThe more projects on OBELIK, the more data, the more network effects, the more the platform becomes irreplaceable.\n\nWe're building the Procore of Africa — but for a market that needs governance, not just project management.\n\nThis is infrastructure for infrastructure. The most boring, most critical, most defensible category in African tech.'\n\nThat's the pitch. Building the demo to prove it.\n\n#OBELIK #YCombinator #BuildInPublic"` }]},
+    { day: 40, pillar: "community", dayName: "Fri", title: "Construction Pro Spotlight", posts: [{ platform: "x", type: "Community spotlight", content: `"This week's spotlight: a conversation with [Name], a project manager with 15 years in African construction.\n\nTheir biggest frustration: 'I spend 40% of my time chasing information that should be in one place.'\n\nThat's exactly what OBELIK consolidates. One platform. All information. Always current.\n\nWho else in construction should I talk to? Tag them 👇\n\n#OBELIK #ConstructionTech"` }, { platform: "linkedin", type: "Industry interview post", content: `"I've been interviewing construction professionals across Africa as I build OBELIK.\n\nOne pattern keeps emerging: the information problem.\n\nProject owners can't get real-time updates. Contractors can't access clear payment schedules. Suppliers can't track delivery confirmations. Everyone is operating from different versions of the truth.\n\nOBELIK creates one source of truth for every project. Not a nice-to-have. A fundamental shift in how projects are coordinated.\n\nMore interviews coming. If you're in the industry, I'd love to hear your story.\n\n#OBELIK #BuildInPublic"` }]},
+    { day: 41, pillar: "build", dayName: "Sat", title: "🔴 LIVE SESSION #3", posts: [{ platform: "live", type: "X Space / IG Live (60 min)", content: `LIVE #3: "Demo Progress + Fintech Partnership Deep Dive"\n\n• Live demo walkthrough of procurement module\n• How the escrow layer will work — technical breakdown\n• Guest: [Fintech founder or BD professional] discussing embedded construction payments\n• Q&A with the community\n• Call for pilot partners — who wants early access?` }]},
+    { day: 42, pillar: "build", dayName: "Sun", title: "Week 6 Recap", posts: [{ platform: "x", type: "Recap", content: `"Week 6 building OBELIK:\n\n✅ Project dashboard — first version live\n✅ Bid evaluation engine — functional\n✅ Fintech case study — 25K impressions\n✅ Live session #3 — [X] attendees\n\nWe're past the halfway mark of the demo build.\n\nWeek 7: milestone payment module + supply chain integration.\n\n#BuildInPublic #OBELIK"` }]},
+    { day: 43, pillar: "problem", dayName: "Mon", title: "The Payment Dispute Nightmare", posts: [{ platform: "x", type: "Story thread", content: `"A contractor finished a hospital wing in East Africa. The project owner said the work was substandard and refused to pay.\n\nThe contractor said they met every spec. No documentation existed to prove either side.\n\nCourt case: 3 years. Cost: $2M in legal fees. Hospital: still not operational.\n\nOn OBELIK: milestones are documented, verified, and timestamped. Disputes have evidence. Resolution takes days, not years.\n\nThe absence of a system doesn't just cause inefficiency. It creates conflict.\n\n#OBELIK #ConstructionTech"` }, { platform: "linkedin", type: "Dispute resolution angle", content: `"The hidden cost of undigitised construction: disputes.\n\nWhen milestones aren't documented, payments aren't verified, and there's no audit trail — every disagreement becomes a legal battle.\n\nOBELIK creates the evidence layer. Every milestone documented. Every payment verified. Every decision traceable.\n\nNot just project management. Dispute prevention.\n\n#OBELIK #ConstructionTech"` }]},
+    { day: 44, pillar: "build", dayName: "Tue", title: "Payment Module Build", posts: [{ platform: "x", type: "Build update", content: `"Build update 🔧\n\nThe milestone payment module is coming together.\n\nFlow:\n1. Project milestones defined at contract stage\n2. Each milestone has completion criteria\n3. Site monitoring verifies completion\n4. Verification triggers escrow release\n5. Payment recorded with full audit trail\n\nThis is where governance meets finance. The heart of OBELIK.\n\n[Screenshot]\n\n#BuildInPublic #OBELIK"` }, { platform: "reels", type: "Explainer video", content: `HOOK: "What if contractors only got paid when the work was actually done?"\n\n"Sounds obvious, right? But in African construction, payments and progress are almost never linked.\n\nThis is OBELIK's payment module. Milestones are defined upfront. Verified on-site. And payment releases automatically from escrow.\n\nNo arguments. No delays. No 'the cheque is coming.'\n\nThe system pays when the work is done. Period."\n\nCAPTION: Milestone-verified payments for construction 💰 #OBELIK #BuildInPublic` }]},
+    { day: 45, pillar: "fintech", dayName: "Wed", title: "Direct Fintech Call-Out", posts: [{ platform: "x", type: "Bold tag + thread", content: `"Building in public means being direct.\n\nWe've been talking about the fintech opportunity in construction for 6 weeks. The response has been incredible.\n\nNow I'm making it specific:\n\n@Abordeee (Paystack) — your escrow expertise + OBELIK = the first construction payment infrastructure in Africa.\n\n@MoniepointGroup — you own offline merchant payments. Construction sites are the ultimate offline-first environment.\n\n@Abordeee (Flutterwave) — cross-border construction payments for international projects.\n\nThe vertical is open. The governance layer is being built. The partnership conversation starts with a DM.\n\nWho's in? 👇"` }]},
+    { day: 46, pillar: "community", dayName: "Thu", title: "Behind the Scenes", posts: [{ platform: "x", type: "Personal / transparent", content: `"Honest moment:\n\nBuilding OBELIK some days feels impossible. The scope is massive. The market is complex. And I'm building publicly, which means every stumble is visible.\n\nBut then I get a DM from a project manager who says 'I've been waiting for something like this for 10 years.'\n\nThat's the fuel.\n\nIf you're a founder having a hard week — keep going. The people who need what you're building are out there.\n\n#BuildInPublic #FounderLife #OBELIK"` }, { platform: "linkedin", type: "Vulnerable founder post", content: `"Week 7 honest update:\n\nSome days, building OBELIK feels like trying to boil the ocean.\n\nThe construction sector is massive. The problems are deep. The change we're proposing is structural.\n\nBut this week, two things reminded me why we're doing this:\n\n1. A contractor in Kenya told me he lost a $2M project to a less qualified company because there was no merit-based evaluation system.\n\n2. A diaspora investor told me she's invested $150K in a housing project she hasn't been able to verify in 8 months.\n\nThese aren't edge cases. They're the norm.\n\nAnd that's exactly why OBELIK has to exist.\n\nBack to building.\n\n#OBELIK #BuildInPublic #FounderJourney"` }]},
+    { day: 47, pillar: "vision", dayName: "Fri", title: "Africa's Infrastructure Decade", posts: [{ platform: "x", type: "Vision thread", content: `"The 2020s are Africa's infrastructure decade.\n\nMassive investment is flowing in:\n→ AfCFTA driving trade infrastructure\n→ Climate adaptation requiring new construction\n→ Urbanisation demanding housing at scale\n→ Government spending on roads, hospitals, schools\n\nBut investment without governance = waste.\n\nOBELIK ensures that every dollar of infrastructure investment delivers maximum impact.\n\nThis isn't just a business. It's continental infrastructure for infrastructure.\n\n#OBELIK #Africa #Infrastructure"` }]},
+    { day: 48, pillar: "build", dayName: "Sat", title: "Weekend Build + Community", posts: [{ platform: "x", type: "Build update", content: `"Saturday build session.\n\nConnecting the payment module to the monitoring module.\n\nWhen a site inspector verifies a milestone on OBELIK, the payment module automatically:\n→ Notifies all stakeholders\n→ Generates a verification report\n→ Triggers escrow release request\n→ Records the transaction\n\nGovernance + finance in one flow.\n\n#BuildInPublic #OBELIK"` }]},
+    { day: 49, pillar: "build", dayName: "Sun", title: "Week 7 Recap", posts: [{ platform: "x", type: "Recap", content: `"Week 7:\n\n✅ Payment module — connected to monitoring\n✅ Direct fintech call-out — massive engagement\n✅ Vulnerability post — most liked content yet\n✅ Demo progress: 65% complete\n\nWeek 8: Polish + first external demo session.\n\nWe're close. 🧱\n\n#BuildInPublic #OBELIK"` }]},
+    { day: 50, pillar: "build", dayName: "Mon", title: "Demo Polish Week", posts: [{ platform: "x", type: "Milestone", content: `"Final stretch of the demo build.\n\nThis week: polish, bug fixes, and the user flow that will make people say 'I need this.'\n\nThe first external demo session is scheduled for Saturday.\n\n5 industry professionals will see OBELIK for the first time.\n\nBuilding in public. Demoing in public. Accountability.\n\n#BuildInPublic #OBELIK"` }, { platform: "linkedin", type: "Demo announcement", content: `"After 7 weeks of building in public, OBELIK is approaching its first external demo.\n\nThis Saturday, 5 construction industry professionals will experience the platform for the first time.\n\nI'm sharing the raw, unfiltered reactions publicly.\n\nIf you're in the industry and want an invite to a future demo session, comment below or DM me.\n\n#OBELIK #BuildInPublic #Demo"` }]},
+    { day: 51, pillar: "problem", dayName: "Tue", title: "Before vs After", posts: [{ platform: "x", type: "Comparison thread", content: `"Construction project management:\n\nBEFORE OBELIK:\n❌ Procurement on paper\n❌ Payments on trust\n❌ Monitoring via WhatsApp\n❌ Supply chain on hope\n❌ Disputes in court\n\nAFTER OBELIK:\n✅ Transparent digital procurement\n✅ Milestone-based escrow payments\n✅ Real-time verified monitoring\n✅ End-to-end supply chain tracking\n✅ Disputes resolved with data\n\nThe demo goes live this week.\n\n#OBELIK #ConstructionTech"` }, { platform: "reels", type: "Split-screen comparison", content: `HOOK: "Construction management: before vs after"\n\n[Split screen — left side: chaotic WhatsApp messages, paper documents, frustrated faces / right side: clean dashboard, verified milestones, transparent payments]\n\n"This isn't a fantasy. This is what we're building at OBELIK.\n\nThe demo is almost ready. Follow for the reveal."\n\nCAPTION: The before and after of African construction 🏗️ #OBELIK #BuildInPublic` }]},
+    { day: 52, pillar: "fintech", dayName: "Wed", title: "Partnership Economics", posts: [{ platform: "x", type: "Numbers thread", content: `"Let's talk fintech partnership economics with OBELIK:\n\nYear 1 conservative scenario:\n→ 50 projects on platform\n→ Average project value: $5M\n→ Total disbursements: $250M\n→ 0.5% escrow fee: $1.25M\n\nYear 3 scenario:\n→ 500 projects\n→ $2.5B in disbursements\n→ $12.5M in escrow fees\n\nThis is recurring, embedded, high-retention revenue.\n\nFor a fintech partner, this isn't a feature. It's a vertical.\n\n#OBELIK #Fintech"` }]},
+    { day: 53, pillar: "community", dayName: "Thu", title: "Pre-Demo Hype", posts: [{ platform: "x", type: "Hype + engagement", content: `"48 hours until the first external demo of OBELIK.\n\nWhat do you most want to see in the walkthrough?\n\n1️⃣ Procurement & bidding flow\n2️⃣ Contractor evaluation scores\n3️⃣ Milestone payment system\n4️⃣ Site monitoring dashboard\n\nI'll prioritise based on your votes.\n\n#OBELIK #Demo #BuildInPublic"` }]},
+    { day: 54, pillar: "build", dayName: "Fri", title: "Demo Eve", posts: [{ platform: "x", type: "Personal + anticipation", content: `"Tomorrow 5 construction industry professionals see OBELIK for the first time.\n\n8 weeks of building. Hundreds of hours. Thousands of decisions.\n\nAll compressed into a 30-minute demo.\n\nI'm nervous. I'm excited. I'm ready.\n\nWhatever happens, you'll hear about it. Building in public means no hiding.\n\nWish us luck. Or better yet — set a reminder for Saturday's live thread.\n\n#OBELIK #BuildInPublic"` }]},
+    { day: 55, pillar: "community", dayName: "Sat", title: "🔴 DEMO DAY + LIVE SESSION #4", posts: [{ platform: "live", type: "X Space + Live Demo (90 min)", content: `DEMO DAY LIVE: "First External Demo of OBELIK"\n\n• 0-5 min: Context setting — 8 weeks of build in public\n• 5-35 min: Full platform walkthrough with 5 industry testers\n• 35-50 min: Live reactions and feedback (unfiltered)\n• 50-70 min: Panel discussion — what works, what needs improvement\n• 70-90 min: Open community Q&A\n\nThread during the demo:\n"🔴 LIVE THREAD: First external demo of OBELIK.\n\nReaction 1: [real-time feedback]\nReaction 2: [real-time feedback]\n...\n\nBuilding in public. Demoing in public. 🧱"` }]},
+    { day: 56, pillar: "build", dayName: "Sun", title: "Month 2 Complete", posts: [{ platform: "x", type: "Month 2 mega-recap", content: `"Month 2 of OBELIK — complete.\n\nThe numbers:\n🛠️ Working demo — live\n🧪 First external demo — completed\n💬 5 industry professionals tested it\n📊 [X] followers | [X] impressions\n🤝 [X] fintech conversations active\n🔴 4 live sessions hosted\n\nMonth 3 is about conversion:\n→ Fintech partnership\n→ Pilot project\n→ Investor conversations\n\nThe demo exists. Now we make it matter.\n\n#BuildInPublic #OBELIK"` }, { platform: "linkedin", type: "Month 2 reflection", content: `"60 days of building OBELIK in public.\n\nThe demo is live. Five industry professionals have tested it. The feedback is invaluable.\n\nMonth 3 priorities:\n1. Secure a fintech partner for the escrow payment layer\n2. Identify first pilot project\n3. Begin investor conversations\n\nThe build continues. But now we're building with validation, not just vision.\n\nThank you to everyone who's followed this journey. The best is ahead.\n\n#OBELIK #BuildInPublic #FounderJourney"` }]},
+  ];
+
+  phase2Remaining.forEach(t => days.push({ ...t, phase: 2 }));
+
+  // ═══════════════════════ PHASE 3: CONVERT (Days 57-90) ═══════════════════════
+
+  const phase3Days = [
+    { day: 57, pillar: "build", dayName: "Mon", title: "Phase 3 Kickoff — Convert Mode", posts: [{ platform: "x", type: "Phase announcement", content: `"Phase 3: Convert.\n\nMonth 1: Built noise.\nMonth 2: Built the demo.\nMonth 3: Build the business.\n\nTargets:\n→ Fintech partnership signed\n→ First pilot project secured\n→ Investor meetings booked\n→ YC application submitted\n\n30 days to turn a demo into a company.\n\nFollow along. 🧱\n\n#BuildInPublic #OBELIK"` }, { platform: "linkedin", type: "Strategic pivot post", content: `"OBELIK enters its third month — and the goal shifts from building to converting.\n\nWe have a working demo. We have community validation. We have fintech interest.\n\nNow we need three things: a fintech partner, a pilot project, and investor confidence.\n\nThis month, every piece of content serves conversion. Every post brings us closer to launch.\n\nThe building in public journey continues — but now the stakes are real.\n\n#OBELIK #BuildInPublic"` }, { platform: "reels", type: "Hype video", content: `HOOK: "Month 3. Time to convert."\n\n"For 60 days I built OBELIK in public. Wireframes. Code. Demo. Live sessions.\n\nNow it's time to make it real.\n\nThis month: fintech partnership. First pilot. Investor conversations.\n\nEverything we've built leads to this.\n\nFollow the final stretch."\n\nCAPTION: From demo to business. Month 3 begins. 🔥 #OBELIK #BuildInPublic` }]},
+    { day: 58, pillar: "build", dayName: "Tue", title: "Demo Iteration from Feedback", posts: [{ platform: "x", type: "Build update", content: `"Post-demo improvements shipping this week:\n\n1. Simplified contractor onboarding flow (feedback: 'too many steps')\n2. Added budget vs. actual visualization (feedback: 'show me the money picture')\n3. Improved mobile responsiveness (feedback: 'site managers use phones, not laptops')\n\nUser feedback → code → ship.\n\nThis is what building in public is really about.\n\n#BuildInPublic #OBELIK"` }]},
+    { day: 59, pillar: "fintech", dayName: "Wed", title: "Fintech Partnership Announcement Push", posts: [{ platform: "x", type: "Urgency thread", content: `"9 weeks of building OBELIK in public.\n\nThe construction governance layer is ready. The demo is live. Industry professionals have validated it.\n\nOne piece remains: the financial rails.\n\nWe're actively seeking our founding fintech partner. Here's what they get:\n\n→ First-mover advantage in a $232B vertical\n→ Integrated escrow within a governance platform\n→ Access to government and enterprise clients\n→ Co-branded launch to our growing community\n→ Revenue from day one (0.5% transaction fees)\n\nThis isn't a vendor relationship. It's a category-defining partnership.\n\nFintech founders: the window is open. DM me.\n\n#OBELIK #Fintech #Partnership"` }, { platform: "linkedin", type: "Formal partnership post", content: `"OBELIK is seeking its founding fintech partner.\n\nAfter 9 weeks of building in public, we have a working demo, industry validation, and a clear path to market.\n\nWhat we need: a fintech company to power the escrow-based milestone payment system embedded within our platform.\n\nThis is a unique opportunity to own the financial infrastructure layer of African construction governance.\n\nI've prepared a detailed partnership brief. If you're a founder, BD lead, or partnerships head at a fintech operating in Africa — let's schedule a conversation.\n\nDM me or email [email]. #OBELIK #Fintech #Partnership"` }]},
+    { day: 60, pillar: "vision", dayName: "Thu", title: "The Investor Thesis", posts: [{ platform: "x", type: "Investor-focused thread", content: `"The OBELIK investment thesis in 7 tweets:\n\n1/ Market: $232B African construction. Growing to $240B by 2030. <5% digitised.\n\n2/ Problem: No integrated governance platform. Procurement, payments, monitoring, and supply chain are all fragmented.\n\n3/ Solution: OBELIK — 360° construction lifecycle platform. One system for everything.\n\n4/ Revenue: Enterprise subscriptions + 0.5% escrow fees. Scales with project volume.\n\n5/ Moat: Network effects. More contractors + vendors + owners = more value for everyone.\n\n6/ Stage: Demo complete. Fintech partnership in progress. Pilot project pipeline building.\n\n7/ Vision: The operating system for how infrastructure is delivered across Africa.\n\nIf you invest in African tech infrastructure — let's talk.\n\n#OBELIK #Investment #AfricanTech"` }]},
+    { day: 61, pillar: "community", dayName: "Fri", title: "Pilot Project Call", posts: [{ platform: "x", type: "Call to action", content: `"Looking for our first pilot partner.\n\nIf you're a:\n→ Real estate developer in Africa\n→ Government infrastructure agency\n→ International development org\n→ Construction company managing multiple projects\n\nAnd you want to be the first to run a project on OBELIK — DM me.\n\nEarly partners get: free access, direct product influence, and a case study spotlight.\n\nWho's ready to be first? 👇\n\n#OBELIK #Pilot #ConstructionTech"` }, { platform: "linkedin", type: "Professional pilot pitch", content: `"OBELIK is ready for its first pilot project.\n\nWe're looking for a construction project owner — government, developer, or international org — willing to run their next project on our platform.\n\nWhat you get: full-service construction governance at no cost during pilot, direct input on product development, and a co-branded case study.\n\nWhat we get: real-world validation and the proof point that unlocks everything.\n\nIf this is you — or you know who this should be — please reach out.\n\n#OBELIK #Pilot #ConstructionTech"` }]},
+    { day: 62, pillar: "build", dayName: "Sat", title: "🔴 LIVE SESSION #5", posts: [{ platform: "live", type: "X Space (75 min)", content: `LIVE #5: "The Path to Launch — Partnerships, Pilots, and What's Next"\n\n• Updated demo walkthrough (post-feedback improvements)\n• Fintech partnership update — where conversations stand\n• Pilot project criteria and pipeline\n• Community AMA — everything you want to know\n• How to get involved — beta list, introductions, spreading the word` }]},
+    { day: 63, pillar: "build", dayName: "Sun", title: "Week 9 Recap", posts: [{ platform: "x", type: "Recap", content: `"Week 9:\n\n✅ Demo improvements shipped based on user feedback\n✅ Fintech partnership brief sent to [X] companies\n✅ Pilot project outreach to [X] organizations\n✅ Investor thesis published — strong engagement\n\nThe conversion phase is live.\n\n#BuildInPublic #OBELIK"` }]},
+    // Weeks 10-13
+    { day: 64, pillar: "problem", dayName: "Mon", title: "Government Accountability Play", posts: [{ platform: "x", type: "Govtech thread", content: `"African governments collectively spend tens of billions annually on infrastructure.\n\nCitizens have almost zero visibility into how that money is spent.\n\nWhat if every public construction project had a transparent, auditable digital record?\n\nThat's the govtech use case for OBELIK.\n\nOpen procurement. Verified milestones. Public dashboards.\n\nGovernance as a service.\n\n#OBELIK #GovTech #Transparency"` }, { platform: "reels", type: "Government pitch video", content: `HOOK: "What if you could track your tax money building a hospital?"\n\n"Every year, your government spends billions on infrastructure. Roads. Schools. Hospitals.\n\nBut you have no idea how that money is spent. No way to check if the project is on time. No way to verify the quality.\n\nOBELIK can change that. Transparent procurement. Verified milestones. Public dashboards.\n\nGovernment accountability, powered by technology.\n\nThis is what we're building."\n\nCAPTION: What if infrastructure spending was transparent? 🏛️ #OBELIK #GovTech` }]},
+    { day: 65, pillar: "build", dayName: "Tue", title: "Demo Video Release", posts: [{ platform: "x", type: "Video launch", content: `"The OBELIK demo video is here. 🎬\n\n3 minutes. Full platform walkthrough.\n\nProcurement → Contractor Eval → Site Monitoring → Payments → Supply Chain\n\nThis is what the future of African construction governance looks like.\n\n[Video link]\n\nRT to help us reach every construction professional on this app.\n\n#OBELIK #Demo #ConstructionTech"` }, { platform: "linkedin", type: "Professional demo share", content: `"After 9+ weeks of building in public, I'm proud to share the OBELIK demo video.\n\nThis 3-minute walkthrough shows how OBELIK digitises the full construction project lifecycle — from procurement to payment.\n\nIf you work in construction, infrastructure, fintech, or govtech in Africa — this was built for you.\n\n[Video link]\n\nFeedback welcome. Partnerships welcome. The future of construction governance starts here.\n\n#OBELIK #Demo #ConstructionTech"` }, { platform: "reels", type: "Demo highlights reel", content: `[60-sec condensed demo walkthrough with music, quick cuts, key feature highlights]\n\nCAPTION: The OS for African construction is here. Full demo link in bio. 🏗️ #OBELIK #Demo #BuildInPublic` }]},
+    { day: 66, pillar: "fintech", dayName: "Wed", title: "Fintech Update Thread", posts: [{ platform: "x", type: "Transparent update", content: `"Fintech partnership update — building in public means sharing the real story.\n\nWeek 10. Here's where we stand:\n\n→ [X] fintech companies contacted\n→ [X] expressed interest\n→ [X] detailed conversations in progress\n→ [X] partnership briefs reviewed\n\nThe construction escrow vertical is being taken seriously. Multiple conversations happening.\n\nI'll share more as it develops. No fake announcements. Just the real journey.\n\n#OBELIK #Fintech #BuildInPublic"` }]},
+    { day: 67, pillar: "community", dayName: "Thu", title: "Media Push", posts: [{ platform: "x", type: "Media engagement", content: `"Journalists covering African tech:\n\nHere's a story for you.\n\n$232B market. Zero governance infrastructure. One platform trying to change it. Building entirely in public.\n\n@TechCabal @DisruptAfrica @Techpoint_Africa @WeeTrackerHQ\n\nThe story of OBELIK is the story of Africa's next tech frontier: infrastructure software.\n\nDM for the full brief. 👇\n\n#OBELIK #AfricanTech"` }, { platform: "linkedin", type: "PR pitch post", content: `"African tech media — I have a story for you.\n\nThe construction tech space in Africa is about to have its moment. OBELIK is at the center of it.\n\nA founder building the continent's first integrated construction governance platform. In public. From demo to partnerships.\n\nThe story has data ($232B market), drama (building in public), and a clear thesis (infrastructure for infrastructure).\n\nJournalists — DM me. I'm happy to provide exclusive access to the full journey.\n\n#OBELIK #Media #AfricanTech"` }]},
+    { day: 68, pillar: "vision", dayName: "Fri", title: "The YC Application", posts: [{ platform: "x", type: "YC application thread", content: `"Just submitted our @ycombinator application.\n\nBuilding in public means sharing this too.\n\nThe core of our application:\n→ Market: $232B, <5% digitised\n→ Problem: No integrated governance platform\n→ Solution: Full lifecycle digital construction management\n→ Traction: Demo live, fintech partnerships in progress, pilot pipeline active\n→ Why now: AfCFTA, urbanisation, and digital construction adoption converging\n\nWhether we get in or not, the build doesn't stop.\n\nBut @ycombinator — we're a good bet. 🧱\n\n#OBELIK #YCombinator #BuildInPublic"` }, { platform: "linkedin", type: "YC announcement", content: `"Today we submitted OBELIK's application to Y Combinator.\n\nRegardless of the outcome, the process itself was valuable — it forced us to crystallise our thesis, quantify our traction, and articulate why now.\n\nThe build continues either way. But having YC's network behind African infrastructure tech could accelerate everything.\n\nFingers crossed. Back to building.\n\n#OBELIK #YCombinator #BuildInPublic"` }]},
+    { day: 69, pillar: "build", dayName: "Sat", title: "🔴 LIVE SESSION #6", posts: [{ platform: "live", type: "X Space (75 min)", content: `LIVE #6: "YC Application Debrief + Full Demo"\n\n• What we put in the YC application and why\n• Full demo walkthrough (latest version)\n• Fintech partnership status update\n• Pilot project pipeline reveal\n• Community Q&A — ask me anything about the journey so far` }]},
+    { day: 70, pillar: "build", dayName: "Sun", title: "Week 10 Recap", posts: [{ platform: "x", type: "Recap", content: `"Week 10:\n\n✅ Demo video released — [X]K views\n✅ YC application submitted\n✅ Fintech partnership conversations advancing\n✅ Media outreach — [X] responses\n✅ Live session #6 — biggest yet\n\nThe momentum is undeniable. 3 more weeks in Phase 3.\n\n#BuildInPublic #OBELIK"` }]},
+    // Weeks 11-13 (days 71-90)
+    { day: 71, pillar: "problem", dayName: "Mon", title: "The $1.16B Fintech Slide", posts: [{ platform: "x", type: "Data hook", content: `"A fintech that captures just 0.5% of construction disbursements in Africa would generate $1.16 BILLION in transaction revenue.\n\nAnd nobody is doing it.\n\nBecause until OBELIK, there was no governance layer to embed payments into.\n\nThe platform is built. The vertical is open. The clock is ticking.\n\n#OBELIK #Fintech"` }]},
+    { day: 72, pillar: "build", dayName: "Tue", title: "User Testing Round 2", posts: [{ platform: "x", type: "Testing update", content: `"Round 2 of user testing this week.\n\n10 construction professionals. 3 countries. 1 demo.\n\nLive-threading the feedback as it comes in.\n\nBuilding in public means testing in public.\n\n#BuildInPublic #OBELIK"` }, { platform: "reels", type: "User testing montage", content: `[Quick cuts of screen shares, reactions, people interacting with the demo, honest feedback moments]\n\n"This is what building in public looks like. Real users. Real reactions. Real feedback.\n\nOBELIK gets better every day because of people like this.\n\nFollow for the journey."\n\nCAPTION: Real users, real feedback 🧪 #OBELIK #BuildInPublic` }]},
+    { day: 73, pillar: "fintech", dayName: "Wed", title: "Fintech Partnership Teaser", posts: [{ platform: "x", type: "Teaser", content: `"Something is cooking. 🍳\n\nCan't say much yet. But the construction escrow conversation just moved from 'interesting idea' to 'let's talk terms.'\n\nBuilding in public means I'll share when I can.\n\nStay tuned.\n\n#OBELIK #Fintech"` }]},
+    { day: 74, pillar: "community", dayName: "Thu", title: "Founder Community Build", posts: [{ platform: "x", type: "Community thread", content: `"11 weeks of building in public. Here's what the community has become:\n\n→ Construction professionals across [X] African countries\n→ Fintech founders and BD leads\n→ Government innovation officers\n→ Diaspora investors\n→ Fellow founders building for Africa\n\nThis isn't just a product community. It's a movement for construction governance.\n\nThank you to everyone who's been part of this journey. The best is coming.\n\n#OBELIK #Community #BuildInPublic"` }]},
+    { day: 75, pillar: "vision", dayName: "Fri", title: "90-Day Vision Check", posts: [{ platform: "x", type: "Reflection thread", content: `"75 days ago, OBELIK was a concept note and a dream.\n\nToday:\n→ Working demo ✅\n→ 10+ user tests completed ✅\n→ Fintech partnerships in negotiation ✅\n→ Pilot project pipeline active ✅\n→ YC application submitted ✅\n→ Community of [X]K+ followers ✅\n\nBuilding in public works. Transparency creates trust. Trust creates opportunity.\n\n15 days left in the 90-day sprint. Let's finish strong.\n\n#BuildInPublic #OBELIK"` }]},
+    { day: 76, pillar: "build", dayName: "Sat", title: "🔴 LIVE SESSION #7", posts: [{ platform: "live", type: "X Space (60 min)", content: `LIVE #7: "75-Day Check-In + What's Next for OBELIK"\n\n• Full 75-day journey recap\n• Demo walkthrough (latest improvements)\n• Fintech partnership update\n• Pilot project conversations\n• Community Q&A\n• What happens after day 90?` }]},
+    { day: 77, pillar: "build", dayName: "Sun", title: "Week 11 Recap", posts: [{ platform: "x", type: "Recap", content: `"Week 11:\n\n✅ User testing round 2 complete — 10 testers, 3 countries\n✅ Fintech conversations advancing to terms\n✅ Community growth accelerating\n✅ 75-day milestone celebrated\n\nFinal 2 weeks. Everything counts.\n\n#BuildInPublic #OBELIK"` }]},
+    { day: 78, pillar: "fintech", dayName: "Mon", title: "Partnership Close Push", posts: [{ platform: "x", type: "Final push", content: `"Two weeks left in OBELIK's 90-day build sprint.\n\nThe fintech partnership is the missing piece.\n\nIf you're a fintech company that can power escrow-based construction payments in Africa — the window is closing on being the founding partner.\n\nFirst partner gets:\n→ Exclusive integration\n→ Co-branded market launch\n→ Revenue from day one\n→ The largest untapped B2B payment vertical in Africa\n\nLast call. DMs open.\n\n#OBELIK #Fintech"` }]},
+    { day: 79, pillar: "build", dayName: "Tue", title: "Final Feature Ship", posts: [{ platform: "x", type: "Build update", content: `"Shipping the final feature for the OBELIK demo: automated compliance reporting.\n\nEvery project on OBELIK now generates:\n→ Procurement audit report\n→ Milestone verification log\n→ Financial disbursement summary\n→ Supply chain tracking report\n\nOne click. Full compliance. Ready for any oversight body.\n\nThis is governance-as-a-service.\n\n#BuildInPublic #OBELIK"` }]},
+    { day: 80, pillar: "vision", dayName: "Wed", title: "The Africa Opportunity", posts: [{ platform: "x", type: "Big picture thread", content: `"People ask me: 'Why Africa? Why construction? Why now?'\n\nAfrica:\n→ Youngest population on Earth\n→ Fastest urbanisation rate\n→ $232B+ construction market\n→ <5% digital penetration\n\nConstruction:\n→ The backbone of every other sector\n→ Touches housing, healthcare, education, transport\n→ Massive capital flows with minimal governance\n\nNow:\n→ AfCFTA creating continental trade infrastructure demand\n→ Digital adoption accelerating post-COVID\n→ Investor appetite for African infra-tech growing\n\nThe window is wide open. OBELIK walks through it.\n\n#OBELIK #Africa #Investment"` }]},
+    { day: 81, pillar: "community", dayName: "Thu", title: "Thank You Thread", posts: [{ platform: "x", type: "Gratitude + CTA", content: `"To everyone who's followed the OBELIK build in public journey:\n\nThank you.\n\nTo the construction professionals who shared their pain points — you shaped the product.\nTo the fintech founders who saw the opportunity — you're shaping the business.\nTo the fellow founders who RT'd and encouraged — you're the ecosystem.\n\nWe're not done. We're just getting started.\n\n10 days until the end of the 90-day sprint. What comes next will be even bigger.\n\n#OBELIK #BuildInPublic #Gratitude"` }]},
+    { day: 82, pillar: "build", dayName: "Fri", title: "Pilot Preview", posts: [{ platform: "x", type: "Pilot update", content: `"Pilot project update:\n\n[X] organizations in our pipeline.\n[X] countries represented.\nFirst pilot expected to start within [X] weeks of partnership confirmation.\n\nThe demo proved the concept. The pilot proves the business.\n\nIf you're a project owner who wants in — last chance to be in the founding cohort.\n\n#OBELIK #Pilot"` }, { platform: "linkedin", type: "Professional pilot update", content: `"OBELIK's pilot pipeline is growing.\n\nWe're in conversations with project owners across multiple African countries who want to run their next construction project on our platform.\n\nThe common thread: they're all tired of fragmented systems and want integrated governance.\n\nIf you're a project owner, developer, or government agency interested in being part of our founding pilot cohort, please reach out this week.\n\nThe window is open. Not for long.\n\n#OBELIK #Pilot #ConstructionTech"` }]},
+    { day: 83, pillar: "build", dayName: "Sat", title: "Weekend Build — Final Polish", posts: [{ platform: "x", type: "Build update", content: `"Final weekend of the 90-day sprint.\n\nPolishing the demo for the grand finale.\n\nEvery pixel. Every flow. Every edge case.\n\nThis platform is going to look and feel like the future.\n\nBecause it is.\n\n#BuildInPublic #OBELIK"` }]},
+    { day: 84, pillar: "vision", dayName: "Sun", title: "Week 12 Recap", posts: [{ platform: "x", type: "Recap", content: `"Week 12:\n\n✅ Final feature shipped — compliance reporting\n✅ Pilot pipeline: [X] organizations\n✅ Fintech partnership: [status update]\n✅ Demo polished and ready for final presentation\n\nOne week left. The finale is going to be something.\n\n#BuildInPublic #OBELIK"` }]},
+    // FINAL WEEK
+    { day: 85, pillar: "problem", dayName: "Mon", title: "Day 85 — The Origin Story", posts: [{ platform: "x", type: "Origin story thread", content: `"5 days until the end of OBELIK's 90-day build in public sprint.\n\nToday: the origin story I haven't told yet. 🧵\n\n[Share the personal story — what moment made you realize this problem needed solving. Make it vivid, emotional, specific.]\n\nThat moment changed everything. And 85 days later, the platform exists.\n\nThe full story drops Friday.\n\n#OBELIK #BuildInPublic #FounderStory"` }, { platform: "linkedin", type: "Origin story", content: `"In 5 days, OBELIK's 90-day build in public sprint ends.\n\nBefore the finale, I want to share why this exists.\n\n[Origin story — personal, specific, emotional. The moment that made this inevitable.]\n\nEvery line of code since then has been in service of that moment.\n\n#OBELIK #FounderStory"` }]},
+    { day: 86, pillar: "build", dayName: "Tue", title: "Day 86 — Full Platform Tour", posts: [{ platform: "x", type: "Video thread", content: `"Day 86. Let me show you what 90 days of building in public produced.\n\nFull OBELIK platform tour — every module, every feature, every flow.\n\n🎬 [5-minute video walkthrough]\n\nThis is what happens when you build with the community, not behind closed doors.\n\nRT to help us reach every construction professional in Africa.\n\n#OBELIK #Demo #BuildInPublic"` }, { platform: "reels", type: "Platform highlight reel", content: `[High-energy 60-sec montage of the platform — procurement, evaluation, monitoring, payments, supply chain. Fast cuts. Clean UI. Professional.]\n\n"90 days. One platform. The future of African construction.\n\nOBELIK."\n\nCAPTION: 90 days of building → this. 🏗️ #OBELIK #BuildInPublic #Demo` }]},
+    { day: 87, pillar: "fintech", dayName: "Wed", title: "Day 87 — Partnership Status", posts: [{ platform: "x", type: "Transparent update", content: `"Day 87. Fintech partnership update.\n\n[Share honest status — whether it's signed, in final negotiations, or still in progress. Building in public means telling the truth.]\n\nWhatever the status, the opportunity remains the same: $232B market, zero construction escrow infrastructure, first mover advantage.\n\nThe door is open.\n\n#OBELIK #Fintech"` }]},
+    { day: 88, pillar: "community", dayName: "Thu", title: "Day 88 — Community Celebration", posts: [{ platform: "x", type: "Community appreciation", content: `"Day 88 of building OBELIK in public.\n\n2 days left.\n\nBefore the finale, I want to spotlight the community that made this possible.\n\n[Thread spotlighting 5-10 specific community members — construction pros, fintech founders, fellow builders — who contributed to the journey]\n\nThis platform was built WITH you. Thank you.\n\n#OBELIK #BuildInPublic #Community"` }]},
+    { day: 89, pillar: "vision", dayName: "Fri", title: "Day 89 — The Manifesto", posts: [{ platform: "x", type: "Manifesto thread", content: `"Tomorrow is Day 90.\n\nBefore the finale, here's the OBELIK manifesto:\n\nWe believe every dollar invested in African infrastructure deserves transparency.\n\nWe believe procurement should reward competence, not connections.\n\nWe believe contractors should be paid when work is verified, not when relationships demand it.\n\nWe believe project owners deserve real-time truth, not quarterly fiction.\n\nWe believe supply chains should be traceable, not faith-based.\n\nWe believe governance is not a luxury — it's the foundation.\n\nOBELIK is not just a platform. It's a standard.\n\nThe standard African construction has been waiting for.\n\nTomorrow, we celebrate 90 days. And announce what comes next.\n\n#OBELIK #Manifesto #BuildInPublic"` }, { platform: "linkedin", type: "Professional manifesto", content: `"Tomorrow marks 90 days of building OBELIK in public.\n\nBefore the finale, here's what we stand for:\n\n[Manifesto — adapted for LinkedIn's professional audience]\n\nThis journey has proven one thing: the market is ready. The demand is real. And the platform is built.\n\nTomorrow, we share what comes next.\n\n#OBELIK #BuildInPublic"` }]},
+    { day: 90, pillar: "community", dayName: "Sat", title: "🔴 DAY 90 — THE GRAND FINALE", posts: [{ platform: "live", type: "X Space + IG Live + LinkedIn Live (120 min)", content: `THE GRAND FINALE: "90 Days of Building OBELIK in Public"\n\n• 0-15 min: The full journey recap — day 1 to day 90\n• 15-30 min: Complete platform demo (final version)\n• 30-45 min: Announcement #1 — Fintech partnership status\n• 45-55 min: Announcement #2 — First pilot project\n• 55-65 min: Announcement #3 — What's next (fundraise? accelerator? expansion?)\n• 65-90 min: Community celebration + Q&A\n• 90-120 min: Open mic — anyone from the community can share their take\n\nPROMOTION (start 5 days before):\n"🔴 Day 90. The Grand Finale.\n\nFor 90 days I've built OBELIK — the OS for African construction — completely in public.\n\nOn Saturday, we go live for the FINAL session.\n\nAnnouncements. Demo. Community. The full story.\n\nThis is the event of the year for African construction tech.\n\nSet your reminder. Tell everyone. 🧱\n\n#OBELIK #Day90 #BuildInPublic"` }, { platform: "x", type: "Epic thread — 90 day summary", content: `"DAY 90. 🧱\n\nNinety days ago, OBELIK was a concept note.\n\nToday it's:\n→ A working platform\n→ A growing community of [X]K+\n→ Fintech partnerships in motion\n→ Pilot projects in pipeline\n→ YC application submitted\n→ [X]M+ impressions generated\n→ [X]+ industry conversations\n\nHere's the full 90-day story, in one thread. 🧵\n\n[Thread recapping each phase — key moments, key numbers, key lessons]\n\nThis isn't the end. This is the beginning.\n\nThe build continues. The mission is the same.\n\nTransforming construction across Africa.\n\nOBELIK. 🌍\n\n#OBELIK #Day90 #BuildInPublic"` }, { platform: "linkedin", type: "Grand finale post", content: `"90 days ago, I made a commitment: build OBELIK — the operating system for African construction governance — entirely in public.\n\nToday, the 90-day sprint ends.\n\nWhat we accomplished:\n[Full summary of achievements, partnerships, community, product]\n\nWhat comes next:\n[Next phase announcement]\n\nTo everyone who followed, engaged, challenged, and supported — this platform exists because of you.\n\nThe journey continues. And it only gets bigger from here.\n\n#OBELIK #Day90 #BuildInPublic #ConstructionTech"` }]},
+  ];
+
+  phase3Days.forEach(t => days.push({ ...t, phase: 3 }));
+
+  return days;
+};
+
+/* ───────────────────────── MAIN COMPONENT ───────────────────────── */
+
+function OBELIKCalendar() {
+  const allDays = useMemo(() => generateDays(), []);
+  const [selectedPhase, setSelectedPhase] = useState(1);
+  const [selectedDay, setSelectedDay] = useState(null);
+  const [expandedPost, setExpandedPost] = useState(null);
+  const [copiedIdx, setCopiedIdx] = useState(null);
+  const [viewMode, setViewMode] = useState("grid"); // grid or list
+
+  const phaseDays = allDays.filter((d) => d.phase === selectedPhase);
+  const weeks = [];
+  for (let i = 0; i < phaseDays.length; i += 7) {
+    weeks.push(phaseDays.slice(i, i + 7));
+  }
+
+  const handleCopy = (text, idx) => {
+    navigator.clipboard.writeText(text);
+    setCopiedIdx(idx);
+    setTimeout(() => setCopiedIdx(null), 2000);
+  };
+
+  const activeDay = selectedDay !== null ? allDays.find((d) => d.day === selectedDay) : null;
+
+  return (
+    <div style={{
+      fontFamily: "'Instrument Sans', 'DM Sans', system-ui, sans-serif",
+      background: "#08080A", color: "#E0E0E0", minHeight: "100vh",
+    }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideRight { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: translateX(0); } }
+        .fade-up { animation: fadeUp 0.3s ease-out forwards; }
+        .slide-r { animation: slideRight 0.25s ease-out forwards; }
+        .day-card:hover { border-color: #444 !important; transform: translateY(-1px); }
+        .day-card { transition: all 0.15s ease; }
+        .platform-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+      `}</style>
+
+      {/* ─── HEADER ─── */}
+      <div style={{
+        borderBottom: "1px solid #1a1a1a",
+        padding: "28px 20px 20px",
+        background: "linear-gradient(180deg, #0f0f12 0%, #08080A 100%)",
+      }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+            <div style={{
+              width: 32, height: 32, borderRadius: 6,
+              background: "linear-gradient(135deg, #E8432A, #D97706)",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, fontSize: 12, color: "#fff",
+            }}>OB</div>
+            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#555", letterSpacing: 3, textTransform: "uppercase" }}>
+              90-Day Content Calendar
+            </span>
+          </div>
+          <h1 style={{ fontSize: 24, fontWeight: 700, color: "#fff", letterSpacing: -0.5, marginBottom: 6 }}>
+            The OBELIK War Plan
+          </h1>
+          <p style={{ fontSize: 13, color: "#666", maxWidth: 600, lineHeight: 1.5 }}>
+            Every day. Every platform. Every post. 90 days of building in public, attracting fintech partners, and converting attention into partnerships.
+          </p>
+        </div>
+      </div>
+
+      {/* ─── PHASE SELECTOR ─── */}
+      <div style={{ borderBottom: "1px solid #141414", background: "#0a0a0c" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 20px", display: "flex", gap: 0 }}>
+          {PHASES.map((p) => (
+            <button
+              key={p.id}
+              onClick={() => { setSelectedPhase(p.id); setSelectedDay(null); setExpandedPost(null); }}
+              style={{
+                padding: "14px 20px", border: "none", cursor: "pointer",
+                background: "transparent",
+                borderBottom: selectedPhase === p.id ? `2px solid ${p.color}` : "2px solid transparent",
+                transition: "all 0.15s",
+              }}
+            >
+              <div style={{ fontSize: 12, fontWeight: 700, color: selectedPhase === p.id ? p.color : "#555", fontFamily: "'JetBrains Mono', monospace" }}>
+                {p.name}
+              </div>
+              <div style={{ fontSize: 10, color: "#444", marginTop: 2 }}>{p.weeks}</div>
+            </button>
+          ))}
+          <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 4 }}>
+            {["grid", "list"].map((m) => (
+              <button key={m} onClick={() => setViewMode(m)} style={{
+                padding: "6px 12px", borderRadius: 4, border: "1px solid",
+                borderColor: viewMode === m ? "#333" : "transparent",
+                background: viewMode === m ? "#1a1a1a" : "transparent",
+                color: viewMode === m ? "#ccc" : "#555",
+                fontSize: 11, cursor: "pointer", fontWeight: 500,
+              }}>{m === "grid" ? "Grid" : "List"}</button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ─── PHASE INFO BAR ─── */}
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "16px 20px" }}>
+        <div style={{
+          background: `${PHASES[selectedPhase - 1].color}08`,
+          border: `1px solid ${PHASES[selectedPhase - 1].color}25`,
+          borderRadius: 8, padding: "12px 16px",
+          display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8,
+        }}>
+          <div>
+            <span style={{ fontSize: 14, fontWeight: 700, color: PHASES[selectedPhase - 1].color }}>
+              {PHASES[selectedPhase - 1].subtitle}
+            </span>
+            <span style={{ fontSize: 12, color: "#555", marginLeft: 12 }}>
+              {phaseDays.length} days · {phaseDays.reduce((a, d) => a + d.posts.length, 0)} posts
+            </span>
+          </div>
+          <div style={{ display: "flex", gap: 12 }}>
+            {Object.entries(PILLAR_COLORS).map(([k, c]) => {
+              const count = phaseDays.filter((d) => d.pillar === k).length;
+              if (!count) return null;
+              return (
+                <span key={k} style={{ fontSize: 10, color: c, fontFamily: "'JetBrains Mono', monospace" }}>
+                  {PILLAR_ICONS[k]} {count}d
+                </span>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 20px 40px", display: "flex", gap: 20 }}>
+        {/* ─── LEFT: CALENDAR ─── */}
+        <div style={{ flex: selectedDay ? "0 0 380px" : "1 1 auto", minWidth: 0, transition: "flex 0.3s" }}>
+          {viewMode === "grid" ? (
+            weeks.map((week, wi) => (
+              <div key={wi} style={{ marginBottom: 20 }}>
+                <div style={{ fontSize: 10, fontWeight: 700, color: "#333", fontFamily: "'JetBrains Mono', monospace", marginBottom: 8, letterSpacing: 2, textTransform: "uppercase" }}>
+                  Week {Math.floor((phaseDays[0]?.day - 1) / 7) + wi + 1}
+                </div>
+                <div style={{ display: "grid", gridTemplateColumns: selectedDay ? "repeat(auto-fill, minmax(140px, 1fr))" : "repeat(7, 1fr)", gap: 6 }}>
+                  {week.map((d) => (
+                    <div
+                      key={d.day}
+                      className="day-card"
+                      onClick={() => { setSelectedDay(selectedDay === d.day ? null : d.day); setExpandedPost(null); }}
+                      style={{
+                        background: selectedDay === d.day ? "#141416" : "#0e0e10",
+                        border: `1px solid ${selectedDay === d.day ? PILLAR_COLORS[d.pillar] : "#1a1a1a"}`,
+                        borderRadius: 8, padding: "10px 12px", cursor: "pointer",
+                        borderLeft: `3px solid ${PILLAR_COLORS[d.pillar]}`,
+                      }}
+                    >
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                        <span style={{ fontSize: 10, fontWeight: 700, color: PILLAR_COLORS[d.pillar], fontFamily: "'JetBrains Mono', monospace" }}>
+                          D{d.day}
+                        </span>
+                        <span style={{ fontSize: 9, color: "#444" }}>{d.dayName}</span>
+                      </div>
+                      <div style={{ fontSize: 11, fontWeight: 600, color: "#ccc", lineHeight: 1.3, marginBottom: 6 }}>
+                        {d.title}
+                      </div>
+                      <div style={{ display: "flex", gap: 3, flexWrap: "wrap" }}>
+                        {d.posts.map((p, pi) => (
+                          <span key={pi} style={{
+                            width: 6, height: 6, borderRadius: "50%",
+                            background: PLATFORM_TAGS[p.platform]?.color || "#444",
+                          }} />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))
+          ) : (
+            <div>
+              {phaseDays.map((d) => (
+                <div
+                  key={d.day}
+                  className="day-card"
+                  onClick={() => { setSelectedDay(selectedDay === d.day ? null : d.day); setExpandedPost(null); }}
+                  style={{
+                    background: selectedDay === d.day ? "#141416" : "#0e0e10",
+                    border: `1px solid ${selectedDay === d.day ? PILLAR_COLORS[d.pillar] : "#1a1a1a"}`,
+                    borderRadius: 8, padding: "12px 16px", cursor: "pointer",
+                    marginBottom: 4, display: "flex", alignItems: "center", gap: 14,
+                    borderLeft: `3px solid ${PILLAR_COLORS[d.pillar]}`,
+                  }}
+                >
+                  <span style={{ fontSize: 11, fontWeight: 700, color: PILLAR_COLORS[d.pillar], fontFamily: "'JetBrains Mono', monospace", width: 32, flexShrink: 0 }}>D{d.day}</span>
+                  <span style={{ fontSize: 9, color: "#444", width: 28, flexShrink: 0 }}>{d.dayName}</span>
+                  <span style={{ fontSize: 12, fontWeight: 600, color: "#ccc", flex: 1 }}>{d.title}</span>
+                  <div style={{ display: "flex", gap: 4 }}>
+                    {d.posts.map((p, pi) => (
+                      <span key={pi} className="platform-badge" style={{ background: `${PLATFORM_TAGS[p.platform]?.color}18`, color: PLATFORM_TAGS[p.platform]?.color }}>
+                        {PLATFORM_TAGS[p.platform]?.label}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* ─── RIGHT: DAY DETAIL ─── */}
+        {activeDay && (
+          <div className="fade-up" style={{
+            flex: "1 1 auto", minWidth: 0,
+            position: "sticky", top: 60, alignSelf: "flex-start",
+            maxHeight: "calc(100vh - 80px)", overflowY: "auto",
+          }}>
+            <div style={{
+              background: "#0e0e10", border: "1px solid #1a1a1a", borderRadius: 12,
+              overflow: "hidden",
+            }}>
+              {/* Day Header */}
+              <div style={{
+                padding: "20px 24px",
+                borderBottom: "1px solid #1a1a1a",
+                background: `${PILLAR_COLORS[activeDay.pillar]}06`,
+              }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
+                  <span style={{
+                    fontFamily: "'JetBrains Mono', monospace", fontSize: 13, fontWeight: 700,
+                    color: PILLAR_COLORS[activeDay.pillar],
+                  }}>DAY {activeDay.day}</span>
+                  <span style={{ fontSize: 11, color: "#444" }}>{activeDay.dayName} · {getDate(activeDay.day - 1)}</span>
+                  <span style={{
+                    marginLeft: "auto", fontSize: 10, padding: "3px 10px", borderRadius: 4,
+                    background: `${PILLAR_COLORS[activeDay.pillar]}15`,
+                    color: PILLAR_COLORS[activeDay.pillar],
+                    fontWeight: 600,
+                  }}>{PILLAR_ICONS[activeDay.pillar]} {PILLAR_NAMES[activeDay.pillar]}</span>
+                </div>
+                <h2 style={{ fontSize: 20, fontWeight: 700, color: "#fff" }}>{activeDay.title}</h2>
+              </div>
+
+              {/* Posts */}
+              {activeDay.posts.map((post, i) => (
+                <div key={i} style={{ borderBottom: i < activeDay.posts.length - 1 ? "1px solid #141414" : "none" }}>
+                  <div
+                    onClick={() => setExpandedPost(expandedPost === i ? null : i)}
+                    style={{
+                      padding: "14px 24px", cursor: "pointer",
+                      display: "flex", justifyContent: "space-between", alignItems: "center",
+                      background: expandedPost === i ? "#121214" : "transparent",
+                      transition: "background 0.15s",
+                    }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                      <span className="platform-badge" style={{
+                        background: `${PLATFORM_TAGS[post.platform]?.color}18`,
+                        color: PLATFORM_TAGS[post.platform]?.color,
+                      }}>
+                        {PLATFORM_TAGS[post.platform]?.label}
+                      </span>
+                      <span style={{ fontSize: 13, color: "#999", fontWeight: 500 }}>{post.type}</span>
+                    </div>
+                    <span style={{
+                      fontSize: 14, color: "#333",
+                      transform: expandedPost === i ? "rotate(180deg)" : "none",
+                      transition: "transform 0.2s",
+                    }}>▾</span>
+                  </div>
+                  {expandedPost === i && (
+                    <div className="slide-r" style={{ padding: "0 24px 20px" }}>
+                      <pre style={{
+                        fontSize: 13, color: "#bbb", lineHeight: 1.7,
+                        whiteSpace: "pre-wrap", wordBreak: "break-word",
+                        fontFamily: "'Instrument Sans', sans-serif",
+                        background: "#0a0a0c", padding: 16, borderRadius: 8,
+                        border: "1px solid #141414",
+                        maxHeight: 350, overflowY: "auto",
+                      }}>{post.content}</pre>
+                      <button
+                        onClick={(e) => { e.stopPropagation(); handleCopy(post.content, `${activeDay.day}-${i}`); }}
+                        style={{
+                          marginTop: 10, padding: "7px 18px", borderRadius: 5,
+                          background: copiedIdx === `${activeDay.day}-${i}` ? "#059669" : PILLAR_COLORS[activeDay.pillar],
+                          color: "#fff", border: "none", cursor: "pointer",
+                          fontSize: 11, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace",
+                          letterSpacing: 0.5, transition: "background 0.2s",
+                        }}
+                      >{copiedIdx === `${activeDay.day}-${i}` ? "✓ COPIED" : "COPY CONTENT"}</button>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedDay(null)}
+              style={{
+                marginTop: 8, width: "100%", padding: 10, borderRadius: 8,
+                background: "#0e0e10", border: "1px solid #1a1a1a",
+                color: "#555", fontSize: 11, cursor: "pointer",
+                fontFamily: "'JetBrains Mono', monospace",
+              }}
+            >CLOSE PANEL</button>
+          </div>
+        )}
+      </div>
+
+      {/* ─── FOOTER ─── */}
+      <div style={{ borderTop: "1px solid #111", padding: "16px 20px", textAlign: "center" }}>
+        <p style={{ fontSize: 10, color: "#333", fontFamily: "'JetBrains Mono', monospace", letterSpacing: 1 }}>
+          OBELIK · 90-DAY CONTENT WAR PLAN · CONFIDENTIAL · 2025
+        </p>
+      </div>
+    </div>
+  );
+}
+
+    ReactDOM.createRoot(document.getElementById('root')).render(
+      React.createElement(OBELIKCalendar)
+    );
+  </script>
+</body>
+</html>
